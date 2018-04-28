@@ -1,4 +1,4 @@
-import { LOAD_START, LOAD_END, ERROR } from '../components/app/errorloading/reducers';
+import { LOAD_START, LOAD_END, ERROR } from '../components/app/error-loading/reducers';
 
 const isPromise = val => val && typeof val.then === 'function';
 

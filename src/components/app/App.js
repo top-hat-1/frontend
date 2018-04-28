@@ -13,6 +13,7 @@ class App extends Component {
             <h1></h1>
             <nav>
               <ul>
+                <li>Hello World</li>
               </ul>
             </nav>
           </header>
