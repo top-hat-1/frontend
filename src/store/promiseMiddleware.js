@@ -1,4 +1,4 @@
-import { LOAD_Start, LOAD_end, ERROR } from '../components/app/errorloading/reducers';
+import { LOAD_START, LOAD_END, ERROR } from '../components/app/errorloading/reducers';
 
 const isPromise = val => val && typeof val.then === 'function';
 
@@ -12,7 +12,7 @@ export default ({ dispatch }) => next => action => {
   return payload
     .then(
       result => {
-        dipatch({
+        dispatch({
           type,
           payload: result
         });
