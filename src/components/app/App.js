@@ -10,14 +10,15 @@ class App extends Component {
       <Router>
         <div id="container">
           <header id="header">
-            <h1></h1>
+            
             <nav>
               <ul>
-                <li>Hello World</li>
+                <li>Hello Nav</li>
               </ul>
             </nav>
           </header>
           <main id="main" role="main">
+            <h1>Hello Dabble</h1>
           </main>
           <footer id="footer">
             <small>&copy; 2018 Charlie Heiner | Jack Lomax | Jacob Perez | Charly Welch </small>
