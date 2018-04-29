@@ -1,10 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import { loadProjects } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Project from './Project';
+import AddProjectForm from './AddProjectForm';
 
 class Projects extends Component {
+
+  componentDidMount() {
+    this.props.loadProjects();
+  }
 
   render() {
 
@@ -12,6 +17,7 @@ class Projects extends Component {
 
     return (
       <Fragment>
+        <AddProjectForm/>
         {projects && projects[0] ?
           <div>
             <h3 className="projects-title">Projects</h3>
@@ -31,5 +37,5 @@ export default connect(
     loading: state.loading,
     projects: state.projects
   }),
-  null
+  { loadProjects }
 )(Projects);

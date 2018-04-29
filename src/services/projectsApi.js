@@ -1,6 +1,6 @@
 
 const URL = '/api';
-const PROJECTS_URL = `${URL}/projects`;
+const PROJECTS_URL = 'https://localhost:3000/api/projects';
 
 function loadProjects() {
   return fetch(URL)
@@ -8,7 +8,7 @@ function loadProjects() {
 }
 
 function addProject(project) {
-  return fetch(URL, {
+  return fetch(PROJECTS_URL, {
     method: 'POST',
     body: JSON.stringify(project),
     headers: {
