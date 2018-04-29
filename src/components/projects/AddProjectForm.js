@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { addProject } from './actions';
 
-//TODO: add file upload, completed button for marking as finished, date handling....
+//TODO: add file upload, completed button for marking as finished, date handling.... the rest of the data for a project
 
 class AddProjectForm extends Component {
 
