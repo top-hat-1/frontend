@@ -1,4 +1,4 @@
-import { projects, PROJECTS_LOAD, PROJECT_ADD, PROJECT_REMOVE } from './reducers';
+import { projects, PROJECTS_LOAD, PROJECT_ADD, PROJECT_REMOVE, PROJECT_UPDATE } from './reducers';
 
 
 describe('Projects reducer tests:', () => {
@@ -34,5 +34,17 @@ describe('Projects reducer tests:', () => {
   it('removes project', () => {
     const state = projects([project1, project2], { type: PROJECT_REMOVE, payload: 3457 });
     expect(state).toEqual([project1]);
+  });
+
+  it('updates a project', () => {
+    const updated = { // Do we need to send the entire object?
+      name: 'Back Deck',
+      description: 'its wood',
+      _id: 3456,
+      completed: true,
+    };
+
+    const state = projects([project1], { type: PROJECT_UPDATE, payload: updated });
+    expect(state).toEqual([{ ...project1, ...updated }]);
   });
 });
