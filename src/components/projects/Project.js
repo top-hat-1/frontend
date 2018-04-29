@@ -9,7 +9,7 @@ class Project extends Component {
     return (
       <li className="project-li">
         <div>
-          <p>Project Goes Here</p>
+          <p>Project details will populate here</p>
         </div>
       </li>
     );
