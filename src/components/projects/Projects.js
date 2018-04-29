@@ -12,7 +12,7 @@ class Projects extends Component {
 
     return (
       <Fragment>
-        {projects[0] ?
+        {projects && projects[0] ?
           <div>
             <h3 className="projects-title">Projects</h3>
             <ul className="projects-ul">

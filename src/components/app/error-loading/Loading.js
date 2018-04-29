@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-react';
+import { connect } from 'react-redux';
 import { loadingSelector } from './reducers';
 import { PacmanLoader } from 'react-spinners';
 

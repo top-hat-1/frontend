@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Projects from '../projects/Projects';
 
 class App extends Component {
 
@@ -18,7 +19,11 @@ class App extends Component {
             </nav>
           </header>
           <main id="main" role="main">
-            <h1>Hello Dabble</h1>
+            <Switch>
+              {/* <Route exact path="/" component={Home}/> */}
+              <Route exact path="/projects" component={Projects}/>
+              <Redirect to="/"/>
+            </Switch>
           </main>
           <footer id="footer">
             <small>&copy; 2018 Charlie Heiner | Jack Lomax | Jacob Perez | Charly Welch </small>
