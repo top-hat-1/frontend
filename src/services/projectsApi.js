@@ -1,13 +1,13 @@
 
 const URL = '/api';
-const PROJECTS_URL = 'https://localhost:3000/api/projects';
+const PROJECTS_URL = `${URL}/projects`;
 
 function loadProjects() {
-  return fetch(URL)
+  return fetch(PROJECTS_URL)
     .then(r => r.json());
 }
 
-function addProject(project) {
+function sendProject(project) {
   return fetch(PROJECTS_URL, {
     method: 'POST',
     body: JSON.stringify(project),
@@ -18,7 +18,7 @@ function addProject(project) {
 }
 
 function updateProject(project) {
-  return fetch(`${URL}/${project._id}`, {
+  return fetch(`${PROJECTS_URL}/${project._id}`, {
     method: 'PUT',
     body: JSON.stringify(project),
     headers: {
@@ -28,7 +28,7 @@ function updateProject(project) {
 }
 
 function removeProject(id) {
-  return fetch(`${URL}/${id}`, {
+  return fetch(`${PROJECTS_URL}/${id}`, {
     method: 'DELETE'
   }).then(r => r.json());
 }
@@ -38,7 +38,7 @@ function removeProject(id) {
 
 export default {
   loadProjects,
-  addProject,
+  sendProject,
   updateProject,
   removeProject
 };

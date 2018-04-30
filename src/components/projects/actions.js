@@ -16,7 +16,7 @@ export function loadProjects() {
 
 export function addProject(project) {
   return dispatch => {
-    return projectsApi.addProject(project)
+    return projectsApi.sendProject(project)
       .then(savedProject => {
         const action = {
           type: PROJECT_ADD,

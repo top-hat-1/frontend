@@ -7,25 +7,14 @@ import { addProject } from './actions';
 
 class AddProjectForm extends Component {
 
-  // constructor(props) {
-  //   super(props);
-    
     state = {
       projectName: '',
-      // completed: false,
-      description: '',
+      description: ''
     };
-  // }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { addProject, history } = this.props;
-    const newProject = { ...this.state };
-    
-    addProject(newProject)
-      .then(({ _id }) => {
-        history.pushState(`/projects/${_id}`);
-      });
+    this.props.onEdit(this.state); //will only pass name
   };
 
   handleChange = ({ target }) => {
@@ -53,7 +42,7 @@ class AddProjectForm extends Component {
               value={description}
               onChange={this.handleChange}/>
           </label>
-          <button type="submit">Add</button>
+          <button type="submit">Add Project</button>
         </form>
 
       </div>
