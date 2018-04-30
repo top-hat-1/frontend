@@ -15,7 +15,7 @@ class App extends Component {
             
             <nav>
               <ul>
-                <li>Hello Nav</li>
+                <a href="/projects"><li>Hello Nav</li></a>
               </ul>
             </nav>
           </header>

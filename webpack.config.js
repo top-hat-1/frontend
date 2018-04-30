@@ -16,7 +16,7 @@ module.exports = {
     historyApiFallback: true,
     publicPath: '/',
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': 'http://localhost:3001'
     }
   },
   devtool: 'inline-source-map',
