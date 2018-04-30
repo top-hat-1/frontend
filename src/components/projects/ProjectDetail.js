@@ -5,7 +5,14 @@ class ProjectDetail extends Component {
 
   render() {
 
-    const { projectName, photoUrl, description } = this.props;  // find a way to link to the owner - 'see all projects by (owner.name)'
+    const { id } = this.props.match.params;
+    const { projects } = this.props;
+
+    const result = projects.find(element => {
+      return element._id === id;
+    });
+
+    const { projectName, photoUrl, description } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
 
     return (
       <li className="project-li">
@@ -29,6 +36,7 @@ class ProjectDetail extends Component {
 export default connect(
   state => ({
     owner: state.owner,
+    projects: state.projects
   }),
   null
 )(ProjectDetail);
