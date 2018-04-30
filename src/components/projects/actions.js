@@ -15,15 +15,9 @@ export function loadProjects() {
 }
 
 export function addProject(project) {
-  return dispatch => {
-    return projectsApi.sendProject(project)
-      .then(savedProject => {
-        const action = {
-          type: PROJECT_ADD,
-          payload: savedProject
-        };
-        dispatch(action);
-      });
+  return  {
+    type: PROJECT_ADD,
+    payload: projectsApi.sendProject(project)
   };
 }
 

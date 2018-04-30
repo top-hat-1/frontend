@@ -12,12 +12,12 @@ class ProjectDetail extends Component {
       return element._id === id;
     });
 
-    const { projectName, photoUrl, description } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
+    const { projectName, coverPhotoUrl, description } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
 
     return (
       <li className="project-li">
         <div className="image-wrap"> 
-          <img src={photoUrl}></img>
+          <img src={coverPhotoUrl}></img>
         </div>
         <div className="project-details"> 
           <h4>{projectName}</h4>

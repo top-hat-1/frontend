@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { addProject } from './actions';
+import AddImage from '../forms/AddImage';
 
 //TODO: add file upload, completed button for marking as finished.... the rest of the data for a project
 
@@ -14,7 +15,11 @@ class AddProjectForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onEdit(this.state); //will only pass name
+    this.props.addProject({
+      ...this.state,
+      coverPhotoUrl: this.props.image
+    })
+      .then(() => console.log('finished edit'));
   };
 
   handleChange = ({ target }) => {
@@ -23,9 +28,10 @@ class AddProjectForm extends Component {
 
   render() {
     const { projectName, description } = this.state;
-
+    
     return (
       <div>
+        <AddImage/>
         <form className="add-project-form" onSubmit={this.handleSubmit}>
           <label htmlFor="projectName">
             <input 
@@ -44,13 +50,12 @@ class AddProjectForm extends Component {
           </label>
           <button type="submit">Add Project</button>
         </form>
-
       </div>
     );
   }
 }
 
 export default withRouter(connect(
-  null,
+  state => ({ image: state.imageAdd }),
   { addProject }
 )(AddProjectForm));
