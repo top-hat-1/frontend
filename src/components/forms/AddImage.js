@@ -5,7 +5,7 @@ import { storage, db } from '../../services/firebase';
 
 const completeImages = storage.ref('images');
 
-class AddPhoto extends PureComponent {
+class AddImage extends PureComponent {
 
   state = {
     image: '',
@@ -31,17 +31,19 @@ class AddPhoto extends PureComponent {
   };
 
   handleUpload(file) {
-    const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
-
-    return new Promise((resolve, reject) => {
-      uploadTask.on('state_changed', () => {   
-      },
-      reject,
-      () => {
-        const downloadUrl = uploadTask.snapshot.downloadURL;
-        resolve(downloadUrl);
-      });
-    });
+    // if(file.typeOf === 'File'){
+        const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
+        
+        return new Promise((resolve, reject) => {
+            uploadTask.on('state_changed', () => {   
+            },
+            reject,
+            () => {
+                const downloadUrl = uploadTask.snapshot.downloadURL;
+                resolve(downloadUrl);
+            });
+        });
+    // }
   }
 
   handleToggle = () => {
@@ -67,7 +69,7 @@ class AddPhoto extends PureComponent {
           </figure>
         </div>
 
-        <button className={'form-button'} type={'submit'}>Add</button>
+        <button className={'form-button'} type={'submit'}>Add Image</button>
       </form>
     );
   }
@@ -76,4 +78,4 @@ class AddPhoto extends PureComponent {
 export default connect(
   () => ({}),
   { onSubmit: addImage }
-)(AddPhoto);
+)(AddImage);
