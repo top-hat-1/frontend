@@ -2,7 +2,7 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 
-const path = `${__dirname}/build`;
+const path = `${__dirname}/../server/public`;
 
 module.exports = {
   entry: './src/index.js',
