@@ -2,7 +2,7 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 
-const path = `${__dirname}/../server/public`;
+const path = `${__dirname}/build`;
 
 module.exports = {
   entry: './src/index.js',
@@ -16,7 +16,7 @@ module.exports = {
     historyApiFallback: true,
     publicPath: '/',
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': 'http://localhost:3001'
     }
   },
   devtool: 'inline-source-map',
