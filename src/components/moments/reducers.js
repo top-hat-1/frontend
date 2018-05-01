@@ -29,7 +29,7 @@ export function moments(state = [], { type, payload }) {
       return state;
   }
 }
-export function project(state = [], { type, payload }) {
+export function moment(state = [], { type, payload }) {
   switch(type) {
 
     case MOMENT_LOAD:

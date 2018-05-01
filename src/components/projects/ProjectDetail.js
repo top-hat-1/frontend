@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Moments from '../moments/Moments';
 
 class ProjectDetail extends Component {
 
@@ -23,6 +24,7 @@ class ProjectDetail extends Component {
           <h4>{projectName}</h4>
           <p className="description-box">{description}</p>
         </div>
+        <Moments/>
       </div>
     );
   }
