@@ -61,7 +61,9 @@ class AddImage extends PureComponent {
  
         <div className="picture-add">
           <label htmlFor="image"> Add Profile Picture:
-            <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} disabled={disable} required/>
+
+          <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} disabled={disable} required/>
+
           </label>
 
           <figure>

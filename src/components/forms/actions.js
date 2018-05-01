@@ -1,3 +1,4 @@
+
 import { IMAGE_ADD, SIGN_UP, SIGN_IN } from './reducers';
 import apiFunctions from '../../services/projectsApi';
 
@@ -17,3 +18,4 @@ export const signIn = data => (
     type: SIGN_IN,
     payload: apiFunctions.signin(data)
   });
+
