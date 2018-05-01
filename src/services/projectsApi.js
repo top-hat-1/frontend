@@ -39,23 +39,24 @@ function loadMoments(projectId) {
     .then(r => r.json());
 }
 
-function sendMoment(moment, projectId){
-  return fetch(`${PROJECTS_URL}/${projectId}`, {
+function sendMoment(moment){
+  return fetch(`${URL}/moments`, {
     method: 'POST',
-    body: JSON.stringify(moment)
+    body: JSON.stringify(moment),
+    headers // unexpected end of input error... 
   })
     .then(r => r.json());
 }
 
 function sendMomentUpdate(moment) {
-  return fetch(`${PROJECTS_URL}/${moment.projectId}/${moment._id}`, {  // PATH MAY NEED ATTENTION!
+  return fetch(`${URL}/moments/${moment._id}`, {  
     method: 'PUT',
     body: JSON.stringify(moment)
   }).then(r => r.json()); 
 }
 
-function sendMomentRemove(momentId, projectId) {
-  return fetch(`${PROJECTS_URL}/${projectId}/${momentId}`, {
+function sendMomentRemove(momentId) { // TODO: Will need to send the whole object OR owner... investigate
+  return fetch(`${URL}/moments/${momentId}`, {
     method: 'DELETE'
   }).then(r => r.json());
 }

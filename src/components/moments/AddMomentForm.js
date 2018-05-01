@@ -8,7 +8,7 @@ class AddMomentForm extends Component {
   state = {
     category: '',
     caption: '',
-    projectId: this.props.id
+    projectId: this.props.projectId
   };
 
   handleSubmit = event => {
@@ -54,7 +54,7 @@ class AddMomentForm extends Component {
           <div className="radio">
             <label htmlFor="category">
               <input type="radio" value="in-progress" 
-                name="category" checked={this.state.category === 'inProgress'}
+                name="category" checked={this.state.category === 'in-progress'}
                 onChange={this.handleCategoryChange}/>
               In Progress
             </label>
@@ -75,6 +75,8 @@ class AddMomentForm extends Component {
 }
 
 export default connect(
-  state => ({ image: state.imageAdd }),
+  (state) => ({ 
+    image: state.imageAdd,
+  }),
   { addMoment }
 )(AddMomentForm);

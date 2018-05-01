@@ -9,19 +9,19 @@ class Moments extends Component {
 
   state = {
     projectId: this.props.id,
-  }
+  };
 
-  componentDidMount(projectId) {
-    this.props.momentsLoad(projectId);
+  componentDidMount() {
+    this.props.momentsLoad(this.state.projectId);
   }
 
   render() {
 
-    const { moments, id } = this.props;
+    const { moments } = this.props;
 
     return (
       <Fragment>
-        <AddMomentForm projectId={id}/>
+        <AddMomentForm projectId={this.state.projectId}/>
         {moments && moments[0] ?
           <div>
             <ul className="moments-ul">

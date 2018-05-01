@@ -45,7 +45,8 @@ class ProjectDetail extends Component {
 export default connect(
   state => ({
     owner: state.owner,
-    projects: state.projects
+    projects: state.projects,
+    project: state.project
   }),
   { projectLoad }
 )(ProjectDetail);
