@@ -19,9 +19,9 @@ class AddProjectForm extends Component {
     this.props.addProject({
       ...this.state,
       coverPhotoUrl: this.props.image
-    }, this.props.token)
- // TODO: clear fields... setState?
-
+    }, this.props.token);
+  // TODO: clear fields... setState?
+  };
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
