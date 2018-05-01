@@ -1,7 +1,6 @@
 import { PROJECTS_LOAD, PROJECT_ADD, PROJECT_REMOVE, PROJECT_UPDATE } from './reducers';
 import projectsApi from '../../services/projectsApi';
 
-
 export function loadProjects() {
   return dispatch => {
     return projectsApi.loadProjects()
@@ -14,10 +13,10 @@ export function loadProjects() {
   };
 }
 
-export function addProject(project, token) {
+export function addProject(project) {
   return  {
     type: PROJECT_ADD,
-    payload: projectsApi.sendProject(project, token)
+    payload: projectsApi.sendProject(project)
   };
 }
 
