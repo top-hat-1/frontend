@@ -8,6 +8,7 @@ class AddMomentForm extends Component {
   state = {
     category: '',
     caption: '',
+    projectId: this.props.id
   };
 
   handleSubmit = event => {

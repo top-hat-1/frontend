@@ -6,17 +6,22 @@ import Moment from './Moment';
 import AddMomentForm from './AddMomentForm'; 
 
 class Moments extends Component {
-  componentDidMount() {
-    this.props.momentsLoad();
+
+  state = {
+    projectId: this.props.id,
+  }
+
+  componentDidMount(projectId) {
+    this.props.momentsLoad(projectId);
   }
 
   render() {
 
-    const { moments } = this.props;
+    const { moments, id } = this.props;
 
     return (
       <Fragment>
-        <AddMomentForm/>
+        <AddMomentForm projectId={id}/>
         {moments && moments[0] ?
           <div>
             <ul className="moments-ul">

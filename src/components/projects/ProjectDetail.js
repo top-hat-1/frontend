@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { projectLoad } from './actions';
 import Moments from '../moments/Moments';
 
 class ProjectDetail extends Component {
+
+  componentDidMount() {
+    const id = this.props.id;
+    this.props.projectLoad(id);
+  }
 
   render() {
 
@@ -23,7 +29,7 @@ class ProjectDetail extends Component {
           <h4>{projectName}</h4>
           <p className="description-box">{description}</p>
         </div>
-        <Moments/>
+        <Moments id={id}/>
       </div>
     );
   }
@@ -41,5 +47,5 @@ export default connect(
     owner: state.owner,
     projects: state.projects
   }),
-  null
+  { projectLoad }
 )(ProjectDetail);
