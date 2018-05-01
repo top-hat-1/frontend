@@ -18,7 +18,7 @@ class AddProjectForm extends Component {
     this.props.addProject({
       ...this.state,
       coverPhotoUrl: this.props.image
-    })
+    }) // TODO: clear fields... setState?
       .then(() => console.log('finished edit'));
   };
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { loadMoments } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Moment from './Moment';
-import AddMomentForm from './AddMomentForm';
+// import AddMomentForm from './AddMomentForm'; // or call this in project
 
 class Moments extends Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class Moments extends Component {
   render() {
 
     const { moments } = this.props;
-    
+
     return (
       <Fragment>
         {moments && moments[0] ?
