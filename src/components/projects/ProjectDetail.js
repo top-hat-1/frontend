@@ -15,7 +15,7 @@ class ProjectDetail extends Component {
     const { projectName, coverPhotoUrl, description } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
 
     return (
-      <li className="project-li">
+      <div>
         <div className="image-wrap"> 
           <img src={coverPhotoUrl}></img>
         </div>
@@ -23,7 +23,7 @@ class ProjectDetail extends Component {
           <h4>{projectName}</h4>
           <p className="description-box">{description}</p>
         </div>
-      </li>
+      </div>
     );
   }
 }
