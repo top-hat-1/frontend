@@ -15,12 +15,13 @@ class AddProjectForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.props);
     this.props.addProject({
       ...this.state,
       coverPhotoUrl: this.props.image
-    }) // TODO: clear fields... setState?
-      .then(() => console.log('finished edit'));
-  };
+    }, this.props.token)
+ // TODO: clear fields... setState?
+
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
@@ -55,7 +56,7 @@ class AddProjectForm extends Component {
   }
 }
 
-export default withRouter(connect(
-  state => ({ image: state.imageAdd }),
+export default connect(
+  state => ({ image: state.imageAdd, token: state.auth }),
   { addProject }
-)(AddProjectForm));
+)(AddProjectForm);
