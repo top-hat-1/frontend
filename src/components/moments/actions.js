@@ -13,6 +13,8 @@ export function momentsLoad() {
   };
 }
 
+//TODO: momentLoad
+
 export function addMoment(moment) {
   return {
     type: MOMENT_ADD,
