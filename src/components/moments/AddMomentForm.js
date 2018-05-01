@@ -66,6 +66,7 @@ class AddMomentForm extends Component {
               After
             </label>
           </div>
+          <button type="submit">Add Moment</button>
         </form>
       </div>
     );
