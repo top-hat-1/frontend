@@ -6,8 +6,7 @@ class ProjectDetail extends Component {
 
   render() {
 
-    const { id } = this.props.match.params;
-    const { projects } = this.props;
+    const { projects, id } = this.props;
 
     const result = projects.find(element => {
       return element._id === id;

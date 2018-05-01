@@ -5,6 +5,8 @@ import { storage, db } from '../../services/firebase';
 
 const completeImages = storage.ref('images');
 
+// TODO: add conditional to check where we are and change the label on line 65 -- add profile, add cover, add photo
+
 class AddImage extends PureComponent {
 
   state = {
@@ -60,9 +62,9 @@ class AddImage extends PureComponent {
       <form className="user-form" onSubmit={this.handleSubmit}>
  
         <div className="picture-add">
-          <label htmlFor="image"> Add Profile Picture:
+          <label htmlFor="image"> Add Photo:
 
-          <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} disabled={disable} required/>
+            <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} disabled={disable} required/>
 
           </label>
 

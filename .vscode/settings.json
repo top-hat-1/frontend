@@ -9,6 +9,8 @@
         "loader",
         "lomax",
         "pacman",
-        "redux"
+        "redux",
+        "signin",
+        "signup"
     ]
 }

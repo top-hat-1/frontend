@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { loadMoments } from './actions';
+import { momentsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Moment from './Moment';
 import AddMomentForm from './AddMomentForm'; 
 
 class Moments extends Component {
   componentDidMount() {
-    this.props.loadMoments();
+    this.props.momentsLoad();
   }
 
   render() {
@@ -35,5 +35,5 @@ export default connect(
     loading: state.loading,
     moments: state.moments
   }),
-  { loadMoments }
+  { momentsLoad }
 )(Moments);

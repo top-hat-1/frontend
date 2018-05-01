@@ -30,7 +30,7 @@ class AddMomentForm extends Component {
 
   render() {
 
-    const { caption } = this.state; // may not need category here - will be radio buttons
+    const { caption } = this.state; 
 
     return (
       <div>
