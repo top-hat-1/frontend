@@ -12,7 +12,7 @@ const reducer = combineReducers({
   projects,
   project,
   imageAdd,
-  auth
+  auth,
   moments,
   moment
 });
