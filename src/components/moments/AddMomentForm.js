@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { addMoment } from './actions';
 import AddImage from '../forms/AddImage';
 
@@ -67,7 +66,6 @@ class AddMomentForm extends Component {
               After
             </label>
           </div>
-          
         </form>
       </div>
     );
