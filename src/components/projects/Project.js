@@ -10,7 +10,6 @@ class Project extends Component {
     
     return (
       <li className="project-li">
-        <h2>Single Project</h2>
         <div className="image-wrap"> 
           <Link to={`/projects/${_id}`}><img src={coverPhotoUrl}/></Link>
         </div>

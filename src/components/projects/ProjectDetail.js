@@ -16,7 +16,6 @@ class ProjectDetail extends Component {
 
     return (
       <div>
-        <h2>Project Detail</h2>
         <div className="image-wrap"> 
           <img src={coverPhotoUrl}></img>
         </div>
