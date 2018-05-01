@@ -33,6 +33,14 @@ function signup(user) {
   }).then(r => r.json());
 }
 
+function signin(user) {
+  return fetch(`${AUTH_URL}/signin`, {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers
+  }).then(r => r.json());
+}
+
 function updateProject(project) {
   return fetch(`${PROJECTS_URL}/${project._id}`, {
     method: 'PUT',
@@ -55,5 +63,6 @@ export default {
   sendProject,
   updateProject,
   removeProject,
-  signup
+  signup,
+  signin
 };
