@@ -37,7 +37,7 @@ describe('Projects reducer tests:', () => {
   });
 
   it('updates a project', () => {
-    const updated = { // Do we need to send the entire object?
+    const updated = { 
       name: 'Back Deck',
       description: 'its wood',
       _id: 3456,

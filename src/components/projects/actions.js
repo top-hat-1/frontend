@@ -1,7 +1,6 @@
 import { PROJECTS_LOAD, PROJECT_ADD, PROJECT_REMOVE, PROJECT_UPDATE } from './reducers';
 import projectsApi from '../../services/projectsApi';
 
-
 export function loadProjects() {
   return dispatch => {
     return projectsApi.loadProjects()

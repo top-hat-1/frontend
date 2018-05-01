@@ -39,7 +39,7 @@ export function project(state = [], { type, payload }) {
     case PROJECT_REMOVE:
       return null;
     
-    // TODO project update
+    // TODO project update??
 
     default:
       return state;
