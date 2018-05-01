@@ -15,11 +15,38 @@ function loadProjects() {
     .then(r => r.json());
 }
 
+
 function sendProject(project) {
   return fetch(PROJECTS_URL, {
     method: 'POST',
     body: JSON.stringify(project),
     headers
+  }).then(r => r.json());
+}
+
+function loadMoments(projectId) {
+  return fetch(`${PROJECTS_URL}/${projectId}`)
+    .then(r => r.json());
+}
+
+function sendMoment(moment, projectId){
+  return fetch(`${PROJECTS_URL}/${projectId}`, {
+    method: 'POST',
+    body: JSON.stringify(moment)
+  })
+    .then(r => r.json());
+}
+
+function sendMomentUpdate(moment) {
+  return fetch(`${PROJECTS_URL}/${moment.projectId}/${moment._id}`, {  // PATH MAY NEED ATTENTION!
+    method: 'PUT',
+    body: JSON.stringify(moment)
+  }).then(r => r.json()); 
+}
+
+function sendMomentRemove(momentId, projectId) {
+  return fetch(`${PROJECTS_URL}/${projectId}/${momentId}`, {
+    method: 'DELETE'
   }).then(r => r.json());
 }
 
@@ -61,6 +88,10 @@ export default {
   sendProject,
   updateProject,
   removeProject,
+  loadMoments,
+  sendMoment,
+  sendMomentUpdate,
+  sendMomentRemove,
   signup,
   signin
 };
