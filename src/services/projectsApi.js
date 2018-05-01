@@ -4,26 +4,25 @@ const AUTH_URL = `${URL}/auth`;
 
 const headers = {
   'content-type': 'application/json',
+  'Authorization': localStorage.getItem('token')
 };
 
-function addTokenToRequest(token){
-  headers.Authorization = token;
-  return headers;
-}
-
 function loadProjects() {
-  return fetch(PROJECTS_URL)
+  return fetch(PROJECTS_URL, {
+    method: 'GET',
+    headers
+  })
     .then(r => r.json());
 }
 
-//TODO: add load project? 
 
-function sendProject(project, token) {
-  const newHeaders = addTokenToRequest(token);
+function sendProject(project) {
+  console.log('json PROJECT: ', JSON.stringify(project));
+
   return fetch(PROJECTS_URL, {
     method: 'POST',
     body: JSON.stringify(project),
-    newHeaders
+    headers
   }).then(r => r.json());
 }
 

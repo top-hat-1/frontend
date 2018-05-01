@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import { addProject } from './actions';
 import AddImage from '../forms/AddImage';
 
@@ -19,9 +19,9 @@ class AddProjectForm extends Component {
     this.props.addProject({
       ...this.state,
       coverPhotoUrl: this.props.image
-    }, this.props.token);
-  // TODO: clear fields... setState?
+    });
   };
+  // TODO: clear fields... setState?
 
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
@@ -57,6 +57,6 @@ class AddProjectForm extends Component {
 }
 
 export default connect(
-  state => ({ image: state.imageAdd, token: state.auth }),
+  state => ({ image: state.imageAdd }),
   { addProject }
 )(AddProjectForm);
