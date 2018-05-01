@@ -31,19 +31,20 @@ class AddImage extends PureComponent {
   };
 
   handleUpload(file) {
-    // if(file.typeOf === 'File'){
-    const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
-        
-    return new Promise((resolve, reject) => {
-      uploadTask.on('state_changed', () => {   
-      },
-      reject,
-      () => {
-        const downloadUrl = uploadTask.snapshot.downloadURL;
-        resolve(downloadUrl);
+    if(file.name){
+      console.log('BUG FIXED');
+      const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
+      
+      return new Promise((resolve, reject) => {
+        uploadTask.on('state_changed', () => {   
+        },
+        reject,
+        () => {
+          const downloadUrl = uploadTask.snapshot.downloadURL;
+          resolve(downloadUrl);
+        });
       });
-    });
-    // }
+    }
   }
 
   handleToggle = () => {
@@ -62,7 +63,7 @@ class AddImage extends PureComponent {
         <div className="picture-add">
           <label htmlFor="image"> Add Profile Picture:
 
-          <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} disabled={disable} required/>
+            <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} disabled={disable} required/>
 
           </label>
 

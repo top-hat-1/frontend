@@ -14,7 +14,7 @@ export const signUp = data => (
   });
 
 export const signIn = data => (
-  localStorage.getItem('token') ? console.log('Token exists') : apiFunctions.signin(data).then(r => localStorage.setItem('token', r.token)),
+  localStorage.getItem('token') ? null : apiFunctions.signin(data).then(r => localStorage.setItem('token', r.token)),
   {
     type: SIGN_IN,
     payload: apiFunctions.signin(data)

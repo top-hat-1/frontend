@@ -16,7 +16,6 @@ function loadProjects() {
 }
 
 function sendProject(project) {
-  console.log('json PROJECT: ', JSON.stringify(project));
   return fetch(PROJECTS_URL, {
     method: 'POST',
     body: JSON.stringify(project),
