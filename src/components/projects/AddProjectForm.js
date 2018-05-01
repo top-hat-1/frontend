@@ -15,10 +15,11 @@ class AddProjectForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.props);
     this.props.addProject({
       ...this.state,
       coverPhotoUrl: this.props.image
-    })
+    }, this.props.token)
       .then(() => console.log('finished edit'));
   };
 
@@ -55,7 +56,7 @@ class AddProjectForm extends Component {
   }
 }
 
-export default withRouter(connect(
-  state => ({ image: state.imageAdd }),
+export default connect(
+  state => ({ image: state.imageAdd, token: state.auth }),
   { addProject }
-)(AddProjectForm));
+)(AddProjectForm);

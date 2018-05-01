@@ -14,10 +14,10 @@ export function loadProjects() {
   };
 }
 
-export function addProject(project) {
+export function addProject(project, token) {
   return  {
     type: PROJECT_ADD,
-    payload: projectsApi.sendProject(project)
+    payload: projectsApi.sendProject(project, token)
   };
 }
 
