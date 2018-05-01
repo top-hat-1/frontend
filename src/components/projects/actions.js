@@ -1,4 +1,4 @@
-import { PROJECTS_LOAD, PROJECT_ADD, PROJECT_REMOVE, PROJECT_UPDATE } from './reducers';
+import { PROJECTS_LOAD, PROJECT_LOAD, PROJECT_ADD, PROJECT_REMOVE, PROJECT_UPDATE } from './reducers';
 import projectsApi from '../../services/projectsApi';
 
 export function loadProjects() {
@@ -8,6 +8,18 @@ export function loadProjects() {
         dispatch({
           type: PROJECTS_LOAD,
           payload: projects
+        });
+      });
+  };
+}
+
+export function projectLoad(id) {
+  return dispatch => {
+    return projectsApi.loadProject(id)
+      .then(project => {
+        dispatch({
+          type: PROJECT_LOAD,
+          payload: project
         });
       });
   };

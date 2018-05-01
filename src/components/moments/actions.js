@@ -1,9 +1,9 @@
 import { MOMENTS_LOAD, MOMENT_ADD, MOMENT_REMOVE, MOMENT_UPDATE } from './reducers';
 import projectsApi from '../../services/projectsApi';
 
-export function momentsLoad() {
+export function momentsLoad(projectId) {
   return dispatch => {
-    return projectsApi.loadMoments()  //TODO: write loadMoments in projectsApi
+    return projectsApi.loadMoments(projectId)  
       .then(moments => {
         dispatch({
           type: MOMENTS_LOAD,
