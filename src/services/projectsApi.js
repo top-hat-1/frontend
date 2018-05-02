@@ -15,6 +15,13 @@ function loadProjects() {
     .then(r => r.json());
 }
 
+function loadProject(id) {
+  return fetch(`${PROJECTS_URL}/${id}/moments`, {
+    method: 'GET',
+    headers
+  })
+    .then(r => r.json());
+}
 
 function sendProject(project) {
   return fetch(PROJECTS_URL, {
@@ -25,27 +32,48 @@ function sendProject(project) {
 }
 
 function loadMoments(projectId) {
-  return fetch(`${PROJECTS_URL}/${projectId}`)
+  return fetch(`${PROJECTS_URL}/${projectId}/moments`)
     .then(r => r.json());
 }
 
-function sendMoment(moment, projectId){
-  return fetch(`${PROJECTS_URL}/${projectId}`, {
+function sendMoment(moment){
+  return fetch(`${URL}/moments`, {
     method: 'POST',
-    body: JSON.stringify(moment)
+    body: JSON.stringify(moment),
+    headers 
   })
     .then(r => r.json());
 }
 
 function sendMomentUpdate(moment) {
-  return fetch(`${PROJECTS_URL}/${moment.projectId}/${moment._id}`, {  // PATH MAY NEED ATTENTION!
+  return fetch(`${URL}/moments/${moment._id}`, {  
     method: 'PUT',
     body: JSON.stringify(moment)
   }).then(r => r.json()); 
 }
 
-function sendMomentRemove(momentId, projectId) {
-  return fetch(`${PROJECTS_URL}/${projectId}/${momentId}`, {
+function sendMomentRemove(momentId) { // TODO: Will need to send the whole object OR owner... investigate
+  return fetch(`${URL}/moments/${momentId}`, {
+    method: 'DELETE'
+  }).then(r => r.json());
+}
+
+function sendComment(comment) {
+  return fetch(`${URL}/comments`, {
+    method: 'POST',
+    body: JSON.stringify(comment),
+    headers 
+  })
+    .then(r => r.json());
+}
+
+function loadComments(projectId) {
+  return fetch(`${PROJECTS_URL}/${projectId}/comments`)
+    .then(r => r.json());
+}
+
+function sendRemoveComment(id) {
+  return fetch(`${URL}/comments/${id}`, {
     method: 'DELETE'
   }).then(r => r.json());
 }
@@ -80,11 +108,12 @@ function removeProject(id) {
   }).then(r => r.json());
 }
 
-// TODO: addMoment, removeMoment, updateMoment, addComment, removeComment, 
+// TODO: addComment, removeComment, 
 // Check these requests/routes... can we add auth information into the header, do we need additional information in the body for some of these? 
 
 export default {
   loadProjects,
+  loadProject,
   sendProject,
   updateProject,
   removeProject,
@@ -92,6 +121,9 @@ export default {
   sendMoment,
   sendMomentUpdate,
   sendMomentRemove,
+  sendComment,
+  sendRemoveComment,
+  loadComments,
   signup,
   signin
 };

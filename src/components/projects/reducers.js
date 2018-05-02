@@ -30,14 +30,14 @@ export function projects(state = [], { type, payload }) {
       return state;
   }
 }
-export function project(state = [], { type, payload }) {
+export function project(state = null, { type, payload }) {
   switch(type) {
 
     case PROJECT_LOAD:
       return payload;
 
-    case PROJECT_REMOVE:
-      return null;
+    // case PROJECT_REMOVE:
+    //   return null;
     
     // TODO project update??
 

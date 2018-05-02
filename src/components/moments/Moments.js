@@ -1,22 +1,20 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { momentsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Moment from './Moment';
 import AddMomentForm from './AddMomentForm'; 
 
 class Moments extends Component {
-  componentDidMount() {
-    this.props.momentsLoad();
-  }
 
   render() {
 
-    const { moments } = this.props;
+    if(!this.props.project) return null;
+    if(!this.props.project.moments) return null;
+    const { moments } = this.props.project;
 
     return (
       <Fragment>
-        <AddMomentForm/>
+        <AddMomentForm projectId={this.props.projectId}/>
         {moments && moments[0] ?
           <div>
             <ul className="moments-ul">
@@ -33,7 +31,7 @@ class Moments extends Component {
 export default connect(
   state => ({
     loading: state.loading,
-    moments: state.moments
+    project: state.project
   }),
-  { momentsLoad }
+  null
 )(Moments);

@@ -1,4 +1,4 @@
-import { projects, PROJECTS_LOAD, PROJECT_ADD, PROJECT_REMOVE, PROJECT_UPDATE } from './reducers';
+import { projects, project, PROJECTS_LOAD, PROJECT_LOAD, PROJECT_ADD, PROJECT_REMOVE, PROJECT_UPDATE } from './reducers';
 
 
 describe('Projects reducer tests:', () => {
@@ -46,5 +46,25 @@ describe('Projects reducer tests:', () => {
 
     const state = projects([project1], { type: PROJECT_UPDATE, payload: updated });
     expect(state).toEqual([{ ...project1, ...updated }]);
+  });
+});
+
+describe('Project reducer:', () => {
+
+  it('defaults to null', () => {
+    const state = project(undefined, {});
+    expect(state).toEqual(null);
+  });
+
+  const project1 = {
+    name: 'Back Deck',
+    description: 'its wood',
+    _id: 3456,
+    completed: false,
+  };
+
+  it('loads a single project', () => {
+    const state = project(null, { type: PROJECT_LOAD, payload: project1 });
+    expect(state).toEqual(project1);
   });
 });

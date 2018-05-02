@@ -4,7 +4,8 @@ import promiseMiddleware from './promiseMiddleware';
 import { loading, error } from '../components/app/error-loading/reducers';
 import { projects, project } from '../components/projects/reducers';
 import { imageAdd, auth } from '../components/forms/reducers';
-import { moments, moment } from '../components/moments/reducers';
+import { moments } from '../components/moments/reducers';
+import { comments } from '../components/comments/reducers';
 
 const reducer = combineReducers({
   loading,
@@ -14,7 +15,7 @@ const reducer = combineReducers({
   imageAdd,
   auth,
   moments,
-  moment
+  comments
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addProject } from './actions';
 import AddImage from '../forms/AddImage';
 
-//TODO: add file upload, completed button for marking as finished.... the rest of the data for a project
+//TODO: completed button for marking as finished.... the rest of the data for a project
 
 class AddProjectForm extends Component {
 
@@ -15,6 +15,7 @@ class AddProjectForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.props.auth);
+
     this.props.addProject({
       ...this.state,
       coverPhotoUrl: this.props.image,

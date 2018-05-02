@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect/*, Link*/ } from 'reac
 import { connect } from 'react-redux';
 import Projects from '../projects/Projects';
 import ProjectDetail from '../projects/ProjectDetail';
+import MomentDetail from '../moments/MomentDetail';
 import Signup from '../forms/Signup';
 import Signin from '../forms/Signin';
 import Navbar from '../nav/Navbar';
@@ -28,6 +29,7 @@ class App extends Component {
               {/* <Route exact path="/" component={Home}/> */}
               <Route exact path="/projects/:id" render={({ match }) => <ProjectDetail id={match.params.id}/>} />
               <Route exact path="/projects" component={Projects}/>
+              <Route exact path="/projects/:projectId/moments/:id" render ={({ match }) => <MomentDetail id={match.params.id}/>} />
               <Route exact path="/auth/signup" component={Signup}/>
               <Route exact path="/auth/signin" component={Signin}/>
               <Route exact path="/user" component={UserDetail}/>
