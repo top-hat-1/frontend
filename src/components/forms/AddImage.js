@@ -34,7 +34,6 @@ class AddImage extends PureComponent {
 
   handleUpload(file) {
     if(file.name){
-      console.log('BUG FIXED');
       const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
       
       return new Promise((resolve, reject) => {

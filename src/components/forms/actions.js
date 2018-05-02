@@ -1,5 +1,5 @@
 
-import { IMAGE_ADD, SIGN_UP, SIGN_IN } from './reducers';
+import { IMAGE_ADD, SIGN_UP, SIGN_IN, SIGN_OUT } from './reducers';
 import apiFunctions from '../../services/projectsApi';
 
 export const addImage = image => ({
@@ -18,4 +18,11 @@ export const signIn = data => (
   {
     type: SIGN_IN,
     payload: apiFunctions.signin(data)
+  });
+
+export const signOut = () => (
+  localStorage.clear(),
+  {
+    type: SIGN_OUT,
+    payload: null
   });

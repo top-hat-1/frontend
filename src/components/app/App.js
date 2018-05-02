@@ -5,6 +5,7 @@ import Projects from '../projects/Projects';
 import ProjectDetail from '../projects/ProjectDetail';
 import Signup from '../forms/Signup';
 import Signin from '../forms/Signin';
+import Navbar from '../nav/Navbar';
 
 class App extends Component {
 
@@ -14,7 +15,7 @@ class App extends Component {
       <Router>
         <div id="container">
           <header id="header">
-            
+            <Navbar/>
             <nav>
               <ul>
                 <a href="/projects"><li>Hello Nav</li></a>
