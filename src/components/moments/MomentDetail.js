@@ -5,8 +5,9 @@ class MomentDetail extends Component {
 
   render() {
 
-    const { projectId, id } = this.props;
+    const { /*projectId, */id } = this.props;
     const { moments } = this.props;
+    console.log(moments);
 
     const result = moments.find(element => {
       return element._id === id;
@@ -33,7 +34,7 @@ class MomentDetail extends Component {
 export default connect(
   state => ({
     owner: state.owner,
-    moments: state.moments
+    moments: state.project.moments
   }),
   null
 )(MomentDetail);
