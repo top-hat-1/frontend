@@ -35,7 +35,7 @@ class ProjectDetail extends Component {
         <div className="project-details"> 
           <p className="description-box">{description}</p>
         </div>
-        <Moments projectId={id}/>
+        <Moments projectId={id}/> 
         <Comments projectId={_id} comments={comments}/>
       </div>
     );

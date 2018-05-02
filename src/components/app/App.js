@@ -11,8 +11,9 @@ import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
 
 
-// the users/:id/projects route should work for any user - see my projects, pull your id, or click on someone else and get their id
-
+// the users/:id/projects route should work for any user - to see your projects, pull your id, or click on someone else and get their id
+// <Link to={`/users/${userId}/projects`}> Whatever you want to be the link </Link> where userId is pulled off state and passed in
+// this can be applied to user photos anywhere they appear throughout the app.
 class App extends Component {
 
   render() {
@@ -31,9 +32,9 @@ class App extends Component {
           <main id="main" role="main">
             <Switch>
               {/* <Route exact path="/" component={Home}/> */}
+              <Route exact path="/projects/:projectId/moments/:id" render ={({ match }) => <MomentDetail id={match.params.id}/>} />
               <Route exact path="/projects/:id" render={({ match }) => <ProjectDetail id={match.params.id}/>} />
               <Route exact path="/projects" component={Projects}/>
-              <Route exact path="/projects/:projectId/moments/:id" render ={({ match }) => <MomentDetail id={match.params.id}/>} />
               <Route exact path="/auth/signup" component={Signup}/>
               <Route exact path="/auth/signin" component={Signin}/>
               <Route exact path="/user/:id/projects" render={({ match }) => <Projects userId={match.params.id}/>} /> 
