@@ -1,0 +1,176 @@
+@import '../../styles/variables.css';
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "content"
+  "footer";
+  grid-template-rows: auto 1fr auto;
+}
+
+
+.maxwidth-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  animation: pageSlide 1s ease-out;
+}
+
+@keyframes pageSlide {
+  /* 0% {
+    opacity: .0;
+    transform: translate(0, 100%);
+  } */
+  0% {
+    opacity: 0;
+    transform: translate(0, 0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0%);
+  }
+}
+
+/* main {
+  article {
+    animation: pageSlide 1s ease-out;
+  }
+} */
+
+
+#header {
+  grid-area: header;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  /* background-color: $green; */
+}
+
+#main {
+  grid-area: content;
+  text-align: center;
+  background-image: linear-gradient(90deg, #f5f5f5 100%, #dbdbdb 0%);
+  background-size: cover;
+}
+
+#footer {
+  grid-area: footer;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.head-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  align-items: center;
+  
+  li {
+    list-style-type: none;
+    padding: 0 0 0 1rem;
+
+    a {
+      text-decoration: none;
+      color: $black;
+      transition: 0.3s ease all;
+      padding: 0 0 3px;
+      border-bottom: 3px solid $white;
+    }
+    
+    a:hover {
+      color: $black;
+      border-bottom: 3px solid $red;
+    }
+  }
+}
+
+.flex-li {
+  display: flex;
+}
+
+.main-container {
+  text-align: left;
+  padding: 2rem 0;
+}
+
+.footer {
+  text-align: left;
+  color: $gray;
+
+  a {
+    border-bottom: 3px solid $white;
+  }
+  
+  a:hover {
+    border-bottom: 3px solid $red;
+  }
+}
+
+/* ----- Media Queries ----- */
+
+@media (min-width: 200px) {
+  .mobile-logo{
+    display: contents;
+    font-size: 1.3rem;;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+    padding: 7px 0 0;
+    color: $black;
+  }
+
+  .no-line {
+    border-bottom: 0px;
+
+    &:hover {
+      border-bottom: 0px;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.8rem;
+
+    p {
+      line-height: 10px;
+    }
+  }
+  
+}
+
+@media (min-width: 690px) {
+
+  .mobile-logo {
+    display: none;
+  }
+
+  #header {
+    padding: 2rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+    transition: 0.3s ease all;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+  }
+
+  .nav-ul{
+    display: flex;
+  }
+
+  .checkbox {
+    display: none;
+  }
+}

@@ -4,7 +4,6 @@ export const MOMENTS_LOAD = 'MOMENTS_LOAD';
 export const MOMENT_LOAD = 'MOMENT_LOAD';
 export const MOMENT_UPDATE = 'MOMENT_UPDATE';
 
-
 export function moments(state = [], { type, payload }) {
   switch(type) {
     case MOMENTS_LOAD:
@@ -38,7 +37,7 @@ export function moment(state = [], { type, payload }) {
     case MOMENT_REMOVE:
       return null;
     
-    // TODO moment update??
+    // TODO moment update?? STRETCH
 
     default:
       return state;

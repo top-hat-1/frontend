@@ -1,5 +1,5 @@
 
-import { IMAGE_ADD, SIGN_UP, SIGN_IN } from './reducers';
+import { IMAGE_ADD, SIGN_UP, SIGN_IN, SIGN_OUT } from './reducers';
 import apiFunctions from '../../services/projectsApi';
 
 export const addImage = image => ({
@@ -14,8 +14,15 @@ export const signUp = data => (
   });
 
 export const signIn = data => (
-  localStorage.getItem('token') ? console.log('Token exists') : apiFunctions.signin(data).then(r => localStorage.setItem('token', r.token)),
+  localStorage.getItem('token') ? null : apiFunctions.signin(data).then(r => localStorage.setItem('token', r.token)),
   {
     type: SIGN_IN,
     payload: apiFunctions.signin(data)
+  });
+
+export const signOut = () => (
+  localStorage.clear(),
+  {
+    type: SIGN_OUT,
+    payload: null
   });

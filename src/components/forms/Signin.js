@@ -24,7 +24,7 @@ class Signup extends PureComponent {
   render() {
     return (
       <section className='form-submit'>
-        <h4>Sign up</h4>
+        <h4>Sign In</h4>
         <form onSubmit={this.handleSubmit}>
 
           <div>
