@@ -8,6 +8,7 @@ export const addImage = image => ({
 });
 
 export const signUp = data => (
+  localStorage.getItem('token') ? null : apiFunctions.signup(data).then(r => localStorage.setItem('token', r.token)),
   {
     type: SIGN_UP,
     payload: apiFunctions.signup(data)
