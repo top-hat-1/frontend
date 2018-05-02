@@ -5,20 +5,17 @@ class MomentDetail extends Component {
 
   render() {
 
-    const { /*projectId, */id } = this.props;
-    const { moments } = this.props;
-    console.log(moments);
+    const { id, moments, projectName } = this.props;
 
     const result = moments.find(element => {
       return element._id === id;
     });
 
-    // TODO: find projectName and put it h4 above the moment photo
     const { photoUrl, caption, category } = result;
 
     return (
       <div>
-        <h4></h4>
+        <h4>{projectName}</h4>
         <div className="image-wrap"> 
           <img src={photoUrl}></img>
         </div>
@@ -34,7 +31,8 @@ class MomentDetail extends Component {
 export default connect(
   state => ({
     owner: state.owner,
-    moments: state.project.moments
+    moments: state.project.moments,
+    projectName: state.project.projectName
   }),
   null
 )(MomentDetail);
