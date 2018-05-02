@@ -6,6 +6,7 @@ import ProjectDetail from '../projects/ProjectDetail';
 import MomentDetail from '../moments/MomentDetail';
 import Signup from '../forms/Signup';
 import Signin from '../forms/Signin';
+import Footer from './footer/Footer';
 import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
 
@@ -36,9 +37,7 @@ class App extends Component {
               <Redirect to="/"/>
             </Switch>
           </main>
-          <footer id="footer">
-            <small>&copy; 2018 Charlie Heiner | Jack Lomax | Jacob Perez | Charly Welch </small>
-          </footer>
+          <Footer/>
         </div>
       </Router>
     );
