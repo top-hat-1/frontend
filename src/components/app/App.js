@@ -9,8 +9,19 @@ import Signin from '../forms/Signin';
 import Footer from './footer/Footer';
 import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
+import { setUserToState } from './actions';
 
 class App extends Component {
+
+  componentDidMount() {
+    const auth = {};
+    if(localStorage.getItem('token')) {
+      auth.name = localStorage.getItem('name');
+      auth._id = localStorage.getItem('_id');
+      // ADD COMMENTS, FOLLOWS ETC THAT GO INTO USER OBJECT
+    }
+    this.props.setUserToState(auth);
+  }
 
   render() {
 
@@ -49,5 +60,6 @@ export default connect(
     loading: state.loading,
     error: state.error
   }),
-  null
+  { setUserToState }
+  // null
 )(App);

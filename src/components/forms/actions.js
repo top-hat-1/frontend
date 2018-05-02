@@ -9,6 +9,9 @@ export const addImage = image => ({
 
 export const signUp = data => (
   localStorage.getItem('token') ? null : apiFunctions.signup(data).then(r => localStorage.setItem('token', r.token)),
+  localStorage.getItem('name') ? null : apiFunctions.signup(data).then(r => localStorage.setItem('name', r.name)),
+  localStorage.getItem('_id') ? null : apiFunctions.signup(data).then(r => localStorage.setItem('_id', r._id)),
+  // ADD COMMENTS, FOLLOWS, ETC
   {
     type: SIGN_UP,
     payload: apiFunctions.signup(data)
@@ -16,6 +19,9 @@ export const signUp = data => (
 
 export const signIn = data => (
   localStorage.getItem('token') ? null : apiFunctions.signin(data).then(r => localStorage.setItem('token', r.token)),
+  localStorage.getItem('name') ? null : apiFunctions.signin(data).then(r => localStorage.setItem('name', r.name)),
+  localStorage.getItem('_id') ? null : apiFunctions.signin(data).then(r => localStorage.setItem('_id', r._id)),
+  // ADD COMMENTS, FOLLOWS, ETC
   {
     type: SIGN_IN,
     payload: apiFunctions.signin(data)

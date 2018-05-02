@@ -8,7 +8,7 @@ export const SIGN_OUT = 'SIGN_OUT';
 
 export const imageAdd = (state = null, { type, payload }) => {
   switch(type){
-    case IMAGE_ADD :
+    case IMAGE_ADD:
       return payload;
     case PROJECT_ADD:
       return null;
