@@ -19,11 +19,10 @@ class ProjectDetail extends Component {
     const result = projects ? 
       projects.find(element => {
         return element._id === id;
-      }) : this.state.project;
-  
-    
+      }) : this.props.project;
 
     if(!result) return null;
+
     const { projectName, coverPhotoUrl, description, _id } = result;
 
     return (
@@ -41,13 +40,6 @@ class ProjectDetail extends Component {
     );
   }
 }
-
-//TODO: conditional to check for user and give option of commenting, call AddComment component
-// check if this is the current user's project, give option of deleting or editing the project 
-// -- call a component that opens the project in a form and has a remove button. 
-// call Moments components - use projects/userId/projectId/
-// link to the user who created this project
-// if current user's project call AddMomentForm
 
 export default connect(
   state => ({

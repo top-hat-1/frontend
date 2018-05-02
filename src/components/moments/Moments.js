@@ -13,7 +13,7 @@ class Moments extends Component {
     const { moments, owner } = this.props.project;
 
     let userId = null;
-    if(this.props.auth){
+    if(this.props.auth) {
       userId = this.props.auth._id;
     }
 
