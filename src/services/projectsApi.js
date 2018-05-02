@@ -16,7 +16,7 @@ function loadProjects() {
 }
 
 function loadProject(id) {
-  return fetch(`${PROJECTS_URL}/${id}`, {
+  return fetch(`${PROJECTS_URL}/${id}/moments`, {
     method: 'GET',
     headers
   })

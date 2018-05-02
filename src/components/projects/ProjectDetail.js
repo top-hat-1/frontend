@@ -5,7 +5,7 @@ import Moments from '../moments/Moments';
 
 class ProjectDetail extends Component {
 
-  componentDidMount() {
+  componentWillMount() {
     const id = this.props.id;
     this.props.projectLoad(id);
   }
@@ -46,7 +46,7 @@ export default connect(
   state => ({
     owner: state.owner,
     projects: state.projects,
-    project: state.project
+    project: state.project,
   }),
   { projectLoad }
 )(ProjectDetail);

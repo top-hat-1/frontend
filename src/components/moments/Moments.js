@@ -7,21 +7,22 @@ import AddMomentForm from './AddMomentForm';
 
 class Moments extends Component {
 
-  state = {
-    projectId: this.props.id,
-  };
-
-  componentDidMount() {
-    this.props.momentsLoad(this.state.projectId);
-  }
+  // state = {
+  //   projectId: this.props.id,
+  //   // moments: this.props
+  // };
 
   render() {
 
-    const { moments } = this.props;
+    if(!this.props.project) return null;
+    if(!this.props.project.moments) return null;
+    const { moments } = this.props.project;
+
+
 
     return (
       <Fragment>
-        <AddMomentForm projectId={this.state.projectId}/>
+        <AddMomentForm projectId={this.props.id}/>
         {moments && moments[0] ?
           <div>
             <ul className="moments-ul">
@@ -38,7 +39,7 @@ class Moments extends Component {
 export default connect(
   state => ({
     loading: state.loading,
-    moments: state.moments
+    project: state.project
   }),
   { momentsLoad }
 )(Moments);
