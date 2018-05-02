@@ -35,6 +35,7 @@ class AddMomentForm extends Component {
 
     return (
       <div>
+        <h3>Add a Moment</h3>
         <AddImage/>
         <form className="add-moment-form" onSubmit={this.handleSubmit}>
           <label htmlFor="caption">

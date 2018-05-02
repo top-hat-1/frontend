@@ -33,19 +33,19 @@ class AddImage extends PureComponent {
   };
 
   handleUpload(file) {
-    // if(file.typeOf === 'File'){
-    const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
-        
-    return new Promise((resolve, reject) => {
-      uploadTask.on('state_changed', () => {   
-      },
-      reject,
-      () => {
-        const downloadUrl = uploadTask.snapshot.downloadURL;
-        resolve(downloadUrl);
+    if(file.name){
+      const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
+      
+      return new Promise((resolve, reject) => {
+        uploadTask.on('state_changed', () => {   
+        },
+        reject,
+        () => {
+          const downloadUrl = uploadTask.snapshot.downloadURL;
+          resolve(downloadUrl);
+        });
       });
-    });
-    // }
+    }
   }
 
   handleToggle = () => {
