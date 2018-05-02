@@ -59,7 +59,7 @@ function sendMomentRemove(momentId) { // TODO: Will need to send the whole objec
 }
 
 function sendComment(comment) {
-  return fetch(`${PROJECTS_URL}/${comment.target}/comments`, {
+  return fetch(`${URL}/comments`, {
     method: 'POST',
     body: JSON.stringify(comment),
     headers 
