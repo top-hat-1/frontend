@@ -5,6 +5,7 @@ import Projects from '../projects/Projects';
 import ProjectDetail from '../projects/ProjectDetail';
 import Signup from '../forms/Signup';
 import Signin from '../forms/Signin';
+import Footer from './footer/Footer';
 
 class App extends Component {
 
@@ -31,12 +32,7 @@ class App extends Component {
               <Redirect to="/"/>
             </Switch>
           </main>
-          <footer role="contentinfo" id="footer">
-            <section className="footer maxwidth-wrap"> 
-              <p>(c) <a href="https://github.com/top-hat-1" target="_blank" rel="author noopener noreferrer">DabbleDo</a></p>
-              <p>Created by: <a href="https://github.com/pereztjacob" target="_blank" rel="author noopener noreferrer">Jacob Perez</a> | <a href="https://github.com/lomax715" target="_blank" rel="author noopener noreferrer">Jack Lomax</a> | <a href="https://github.com/CharlyWelch" target="_blank" rel="author noopener noreferrer">Charly Welch</a> | <a href="https://github.com/heicj" target="_blank" rel="author noopener noreferrer">Charlie Heiner</a></p>
-            </section>
-          </footer>
+          <Footer/>
         </div>
       </Router>
     );
