@@ -31,9 +31,7 @@ class App extends Component {
               <Redirect to="/"/>
             </Switch>
           </main>
-          <footer id="footer">
-            <small>&copy; 2018 Charlie Heiner | Jack Lomax | Jacob Perez | Charly Welch </small>
-          </footer>
+
         </div>
       </Router>
     );
