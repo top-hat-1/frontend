@@ -10,6 +10,9 @@ import Footer from './footer/Footer';
 import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
 
+
+// the users/:id/projects route should work for any user - see my projects, pull your id, or click on someone else and get their id
+
 class App extends Component {
 
   render() {
@@ -33,6 +36,7 @@ class App extends Component {
               <Route exact path="/projects/:projectId/moments/:id" render ={({ match }) => <MomentDetail id={match.params.id}/>} />
               <Route exact path="/auth/signup" component={Signup}/>
               <Route exact path="/auth/signin" component={Signin}/>
+              <Route exact path="/user/:id/projects" render={({ match }) => <Projects userId={match.params.id}/>} /> 
               <Route exact path="/user" component={UserDetail}/>
               <Redirect to="/"/>
             </Switch>

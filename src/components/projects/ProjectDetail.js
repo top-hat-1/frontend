@@ -24,7 +24,7 @@ class ProjectDetail extends Component {
     
 
     if(!result) return null;
-    const { projectName, coverPhotoUrl, description, _id } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
+    const { projectName, coverPhotoUrl, description, _id } = result;
 
     return (
       <div>

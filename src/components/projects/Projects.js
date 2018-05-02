@@ -8,7 +8,10 @@ import AddProjectForm from './AddProjectForm';
 class Projects extends Component {
 
   componentDidMount() {
-    this.props.projectsLoad(); // TODO: how to call this without user id if we're not looking for a specific user
+    this.props.userId ?  // did a userId get passed as a prop on this? 
+      this.props.projectLoad(this.props.userId) // then load that user's projects.... link in nav bar to users/:id/projects, call Projects component w/ userId=match params
+      :
+      this.props.projectsLoad(); // else call without user id if we're not looking for a specific user
   }
 
   render() {
