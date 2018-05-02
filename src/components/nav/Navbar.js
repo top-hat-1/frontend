@@ -22,11 +22,12 @@ class Navbar extends Component {
 
       return (
         <section className="header">
+          <li><Link to={'/projects'}>Explore</Link></li>
           {
             state.auth
               ? <div>
                 <li><button onClick={this.handleLogOut}>Log out</button></li>
-                <li><Link to={'#'}>My Profile</Link></li>
+                <li><Link to={'/user'}>My Profile</Link></li>
                 <li><Link to={'#'}>My Projects</Link></li>
               </div>
               :
@@ -37,7 +38,6 @@ class Navbar extends Component {
                 <li><Link to={{ 
                   pathname: '/auth/signup', 
                 }}>Sign Up</Link></li>
-                <li><Link to={'/'}>Explore</Link></li>
               </Fragment>
           }
         </section>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 // import { withRouter } from 'react-router-dom';
 import { addProject } from './actions';
 import AddImage from '../forms/AddImage';
@@ -10,14 +11,16 @@ class AddProjectForm extends Component {
 
     state = {
       projectName: '',
-      description: ''
+      description: '',
     };
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.props.auth);
     this.props.addProject({
       ...this.state,
-      coverPhotoUrl: this.props.image
+      coverPhotoUrl: this.props.image,
+      owner: this.props.owner._id
     });
   };
   // TODO: clear fields... setState?
@@ -28,34 +31,43 @@ class AddProjectForm extends Component {
 
   render() {
     const { projectName, description } = this.state;
-    
+    let owner = null;
+    if(this.props.owner){
+      owner = this.props.owner._id;
+    }
     return (
       <div>
-        <AddImage/>
-        <form className="add-project-form" onSubmit={this.handleSubmit}>
-          <label htmlFor="projectName">
-            <input 
-              name="projectName"
-              required 
-              placeholder={projectName ? { projectName } : 'Project Name'}
-              value={projectName}
-              onChange={this.handleChange}/>
-          </label>
-          <label htmlFor="description">
-            <input 
-              name="description" 
-              placeholder={description ? { description } : 'Description'}
-              value={description}
-              onChange={this.handleChange}/>
-          </label>
-          <button type="submit">Add Project</button>
-        </form>
+        {
+          owner
+            ? <div>
+              <AddImage/>
+              <form className="add-project-form" onSubmit={this.handleSubmit}>
+                <label htmlFor="projectName">
+                  <input 
+                    name="projectName"
+                    required 
+                    placeholder={projectName ? { projectName } : 'Project Name'}
+                    value={projectName}
+                    onChange={this.handleChange}/>
+                </label>
+                <label htmlFor="description">
+                  <input 
+                    name="description" 
+                    placeholder={description ? { description } : 'Description'}
+                    value={description}
+                    onChange={this.handleChange}/>
+                </label>
+                <button type="submit">Add Project</button>
+              </form>
+            </div>
+            : null
+        }
       </div>
     );
   }
 }
 
 export default connect(
-  state => ({ image: state.imageAdd }),
+  state => ({ image: state.imageAdd, owner: state.auth }),
   { addProject }
 )(AddProjectForm);

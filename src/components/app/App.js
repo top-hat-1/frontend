@@ -6,6 +6,7 @@ import ProjectDetail from '../projects/ProjectDetail';
 import Signup from '../forms/Signup';
 import Signin from '../forms/Signin';
 import Navbar from '../nav/Navbar';
+import UserDetail from '../user/UserDetail';
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
               <Route exact path="/projects" component={Projects}/>
               <Route exact path="/auth/signup" component={Signup}/>
               <Route exact path="/auth/signin" component={Signin}/>
+              <Route exact path="/user" component={UserDetail}/>
               <Redirect to="/"/>
             </Switch>
           </main>
