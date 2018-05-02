@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { loadProjects } from './actions';
+import { projectsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Project from './Project';
 import AddProjectForm from './AddProjectForm';
@@ -8,7 +8,7 @@ import AddProjectForm from './AddProjectForm';
 class Projects extends Component {
 
   componentDidMount() {
-    this.props.loadProjects();
+    this.props.projectsLoad(); // TODO: how to call this without user id if we're not looking for a specific user
   }
 
   render() {
@@ -22,7 +22,7 @@ class Projects extends Component {
           <div>
             <h3 className="projects-title">Projects</h3>
             <ul className="projects-ul">
-              {projects.map((project, index) => <Project key={index} {...project} />)}
+              {projects.map((project, index) => <Project key={index} {...project}/>)}
             </ul>
           </div>
           : <Loading/>
@@ -37,5 +37,5 @@ export default connect(
     loading: state.loading,
     projects: state.projects
   }),
-  { loadProjects }
+  { projectsLoad }
 )(Projects);

@@ -7,7 +7,7 @@ import { commentsLoad } from '../comments/actions';
 
 class ProjectDetail extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.projectLoad(this.props.id);
     this.props.commentsLoad(this.props.id);
   }
@@ -16,19 +16,23 @@ class ProjectDetail extends Component {
 
     const { projects, id, comments } = this.props;
 
-    const result = projects.find(element => {
-      return element._id === id;
-    });
+    const result = projects ? 
+      projects.find(element => {
+        return element._id === id;
+      }) : this.state.project;
+  
+    
 
+    if(!result) return null;
     const { projectName, coverPhotoUrl, description, _id } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
 
     return (
       <div>
+        <h4>{projectName}</h4>
         <div className="image-wrap"> 
           <img src={coverPhotoUrl}></img>
         </div>
         <div className="project-details"> 
-          <h4>{projectName}</h4>
           <p className="description-box">{description}</p>
         </div>
         <Moments projectId={id}/>

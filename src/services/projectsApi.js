@@ -7,12 +7,20 @@ const headers = {
   'Authorization': localStorage.getItem('token')
 };
 
-function loadProjects() {
-  return fetch(PROJECTS_URL, {
-    method: 'GET',
-    headers
-  })
-    .then(r => r.json());
+function loadProjects(userId = null) {
+  if(userId === null) { 
+    return fetch(PROJECTS_URL, {
+      method: 'GET',
+      headers
+    })
+      .then(r => r.json());
+  } else {
+    return fetch(`${URL}/users/${userId}/projects`, {
+      method: 'GET',
+      headers
+    })
+      .then(r => r.json());
+  }
 }
 
 function loadProject(id) {
