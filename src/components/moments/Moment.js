@@ -10,15 +10,15 @@ class Moment extends Component {
 
   render() {
 
-    const { projId, _id, caption, photoUrl, category } = this.props;
+    const { projectId, _id, caption, photoUrl, category } = this.props;
 
     return (
       <li className="moment-li">
         <div className="image-wrap">
-          <Link to={`/projects/${projId}/moments/${_id}`}><img src={photoUrl}/></Link>
+          <Link to={`/projects/${projectId}/moments/${_id}`}><img src={photoUrl}/></Link>
         </div>
         <div className="moment-details">
-        <Link to={`/projects/${projId}/moments/${_id}`}><p>{caption}</p></Link>
+        <Link to={`/projects/${projectId}/moments/${_id}`}><p>{caption}</p></Link>
         <small>{category}</small>
         </div>
       </li>

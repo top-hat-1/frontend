@@ -16,17 +16,14 @@ function loadProjects() {
 }
 
 function loadProject(id) {
-  return fetch(`${PROJECTS_URL}/${id}`, {
+  return fetch(`${PROJECTS_URL}/${id}/moments`, {
     method: 'GET',
     headers
   })
     .then(r => r.json());
 }
 
-
 function sendProject(project) {
-  console.log('json PROJECT: ', JSON.stringify(project));
-
   return fetch(PROJECTS_URL, {
     method: 'POST',
     body: JSON.stringify(project),
@@ -43,7 +40,7 @@ function sendMoment(moment){
   return fetch(`${URL}/moments`, {
     method: 'POST',
     body: JSON.stringify(moment),
-    headers // unexpected end of input error... 
+    headers 
   })
     .then(r => r.json());
 }
@@ -57,6 +54,26 @@ function sendMomentUpdate(moment) {
 
 function sendMomentRemove(momentId) { // TODO: Will need to send the whole object OR owner... investigate
   return fetch(`${URL}/moments/${momentId}`, {
+    method: 'DELETE'
+  }).then(r => r.json());
+}
+
+function sendComment(comment) {
+  return fetch(`${URL}/comments`, {
+    method: 'POST',
+    body: JSON.stringify(comment),
+    headers 
+  })
+    .then(r => r.json());
+}
+
+function loadComments(projectId) {
+  return fetch(`${PROJECTS_URL}/${projectId}/comments`)
+    .then(r => r.json());
+}
+
+function sendRemoveComment(id) {
+  return fetch(`${URL}/comments/${id}`, {
     method: 'DELETE'
   }).then(r => r.json());
 }
@@ -91,7 +108,7 @@ function removeProject(id) {
   }).then(r => r.json());
 }
 
-// TODO: addMoment, removeMoment, updateMoment, addComment, removeComment, 
+// TODO: addComment, removeComment, 
 // Check these requests/routes... can we add auth information into the header, do we need additional information in the body for some of these? 
 
 export default {
@@ -104,6 +121,9 @@ export default {
   sendMoment,
   sendMomentUpdate,
   sendMomentRemove,
+  sendComment,
+  sendRemoveComment,
+  loadComments,
   signup,
   signin
 };

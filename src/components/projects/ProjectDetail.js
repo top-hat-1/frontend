@@ -2,23 +2,25 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { projectLoad } from './actions';
 import Moments from '../moments/Moments';
+import Comments from '../comments/Comments';
+import { commentsLoad } from '../comments/actions';
 
 class ProjectDetail extends Component {
 
-  componentDidMount() {
-    const id = this.props.id;
-    this.props.projectLoad(id);
+  componentWillMount() {
+    this.props.projectLoad(this.props.id);
+    this.props.commentsLoad(this.props.id);
   }
 
   render() {
 
-    const { projects, id } = this.props;
+    const { projects, id, comments } = this.props;
 
     const result = projects.find(element => {
       return element._id === id;
     });
 
-    const { projectName, coverPhotoUrl, description } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
+    const { projectName, coverPhotoUrl, description, _id } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
 
     return (
       <div>
@@ -29,7 +31,8 @@ class ProjectDetail extends Component {
           <h4>{projectName}</h4>
           <p className="description-box">{description}</p>
         </div>
-        <Moments id={id}/>
+        <Moments projectId={id}/>
+        <Comments projectId={_id} comments={comments}/>
       </div>
     );
   }
@@ -46,7 +49,8 @@ export default connect(
   state => ({
     owner: state.owner,
     projects: state.projects,
-    project: state.project
+    project: state.project,
+    comments: state.comments.comments
   }),
-  { projectLoad }
+  { projectLoad, commentsLoad }
 )(ProjectDetail);
