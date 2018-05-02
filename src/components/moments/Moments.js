@@ -14,7 +14,7 @@ class Moments extends Component {
 
     return (
       <Fragment>
-        <AddMomentForm projectId={this.props.id}/>
+        <AddMomentForm projectId={this.props.projectId}/>
         {moments && moments[0] ?
           <div>
             <ul className="moments-ul">

@@ -13,18 +13,16 @@ export function momentsLoad(projectId) {
   };
 }
 
-//TODO: momentLoad
-
 export function addMoment(moment) {
   return {
     type: MOMENT_ADD,
-    payload: projectsApi.sendMoment(moment) //TODO: write sendMoment in api
+    payload: projectsApi.sendMoment(moment) 
   };
 }
 
 export function updateMoment(moment) {
   return dispatch => {
-    return projectsApi.sendMomentUpdate(moment) // TODO: this one too
+    return projectsApi.sendMomentUpdate(moment) 
       .then(moment => {
         dispatch({
           type: MOMENT_UPDATE,

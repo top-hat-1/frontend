@@ -23,10 +23,7 @@ function loadProject(id) {
     .then(r => r.json());
 }
 
-
 function sendProject(project) {
-  console.log('json PROJECT: ', JSON.stringify(project));
-
   return fetch(PROJECTS_URL, {
     method: 'POST',
     body: JSON.stringify(project),
@@ -43,7 +40,7 @@ function sendMoment(moment){
   return fetch(`${URL}/moments`, {
     method: 'POST',
     body: JSON.stringify(moment),
-    headers // unexpected end of input error... 
+    headers 
   })
     .then(r => r.json());
 }
@@ -91,7 +88,7 @@ function removeProject(id) {
   }).then(r => r.json());
 }
 
-// TODO: addMoment, removeMoment, updateMoment, addComment, removeComment, 
+// TODO: addComment, removeComment, 
 // Check these requests/routes... can we add auth information into the header, do we need additional information in the body for some of these? 
 
 export default {
