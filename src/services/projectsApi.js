@@ -58,6 +58,26 @@ function sendMomentRemove(momentId) { // TODO: Will need to send the whole objec
   }).then(r => r.json());
 }
 
+function sendComment(comment) {
+  return fetch(`${PROJECTS_URL}/${comment.target}/comments`, {
+    method: 'POST',
+    body: JSON.stringify(comment),
+    headers 
+  })
+    .then(r => r.json());
+}
+
+function loadComments(projectId) {
+  return fetch(`${PROJECTS_URL}/${projectId}/comments`)
+    .then(r => r.json());
+}
+
+function sendRemoveComment(id) {
+  return fetch(`${URL}/comments/${id}`, {
+    method: 'DELETE'
+  }).then(r => r.json());
+}
+
 function signup(user) {
   return fetch(`${AUTH_URL}/signup`, {
     method: 'POST',
@@ -101,6 +121,9 @@ export default {
   sendMoment,
   sendMomentUpdate,
   sendMomentRemove,
+  sendComment,
+  sendRemoveComment,
+  loadComments,
   signup,
   signin
 };

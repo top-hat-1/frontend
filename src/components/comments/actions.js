@@ -19,3 +19,15 @@ export function addComment(comment) {
     payload: projectsApi.sendComment(comment)
   };
 }
+
+export function removeComment(id) {
+  return dispatch => {
+    return projectsApi.sendRemoveComment(id)
+      .then(() => {
+        dispatch({
+          type: COMMENT_REMOVE,
+          payload: id
+        });
+      });
+  };
+}
