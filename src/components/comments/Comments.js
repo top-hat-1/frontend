@@ -10,12 +10,19 @@ class Comments extends Component {
 
     // if(!this.props.project) return null;
     if(!this.props.comments) return null;
+    let userId = null;
+    if(this.props.auth) {
+      userId = this.props.auth._id;
+    }
 
     const { comments } = this.props;
 
     return (
       <Fragment>
-        <AddCommentForm projectId={this.props.projectId}/>
+        {userId ? 
+          <AddCommentForm projectId={this.props.projectId}/>
+          : null
+        }
         {comments && comments[0] ?
           <div>
             <ul className="comments-ul">
@@ -33,6 +40,7 @@ export default connect(
   state => ({
     loading: state.loading,
     project: state.project,
+    auth: state.auth
   }),
   null
 )(Comments);

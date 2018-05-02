@@ -5,10 +5,10 @@ import { addComment } from './actions';
 class AddCommentForm extends Component {
 
   state = {
-    // userId: this.props.userId, // need to bring this in
+    userId: this.props.userId, 
     comment: '',
-    target: this.props.projectId, // need to bring this in
-    projectId: this.props.projectId // need to bring this in
+    target: this.props.projectId, 
+    projectId: this.props.projectId 
   };
 
   handleSubmit = event => {
@@ -43,6 +43,8 @@ class AddCommentForm extends Component {
 }
 
 export default connect(
-  null,
+  state => ({
+    userId: state.auth._id
+  }),
   { addComment }
 )(AddCommentForm);

@@ -7,7 +7,7 @@ import { commentsLoad } from '../comments/actions';
 
 class ProjectDetail extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.projectLoad(this.props.id);
     this.props.commentsLoad(this.props.id);
   }
@@ -16,34 +16,30 @@ class ProjectDetail extends Component {
 
     const { projects, id, comments } = this.props;
 
-    const result = projects.find(element => {
-      return element._id === id;
-    });
+    const result = projects ? 
+      projects.find(element => {
+        return element._id === id;
+      }) : this.props.project;
 
-    const { projectName, coverPhotoUrl, description, _id } = result;  // find a way to link to the owner - 'see all projects by (owner.name)'
+    if(!result) return null;
+
+    const { projectName, coverPhotoUrl, description, _id } = result;
 
     return (
       <div>
+        <h4>{projectName}</h4>
         <div className="image-wrap"> 
           <img src={coverPhotoUrl}></img>
         </div>
         <div className="project-details"> 
-          <h4>{projectName}</h4>
           <p className="description-box">{description}</p>
         </div>
-        <Moments projectId={id}/>
+        <Moments projectId={id}/> 
         <Comments projectId={_id} comments={comments}/>
       </div>
     );
   }
 }
-
-//TODO: conditional to check for user and give option of commenting, call AddComment component
-// check if this is the current user's project, give option of deleting or editing the project 
-// -- call a component that opens the project in a form and has a remove button. 
-// call Moments components - use projects/userId/projectId/
-// link to the user who created this project
-// if current user's project call AddMomentForm
 
 export default connect(
   state => ({

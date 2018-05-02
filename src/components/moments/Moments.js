@@ -10,11 +10,18 @@ class Moments extends Component {
 
     if(!this.props.project) return null;
     if(!this.props.project.moments) return null;
-    const { moments } = this.props.project;
+    const { moments, owner } = this.props.project;
+
+    let userId = null;
+    if(this.props.auth) {
+      userId = this.props.auth._id;
+    }
 
     return (
       <Fragment>
-        <AddMomentForm projectId={this.props.projectId}/>
+        {userId === owner ?
+          <AddMomentForm projectId={this.props.projectId}/>
+          : null}
         {moments && moments[0] ?
           <div>
             <ul className="moments-ul">
@@ -31,7 +38,8 @@ class Moments extends Component {
 export default connect(
   state => ({
     loading: state.loading,
-    project: state.project
+    project: state.project,
+    auth: state.auth
   }),
   null
 )(Moments);
