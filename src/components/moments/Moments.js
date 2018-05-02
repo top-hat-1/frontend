@@ -1,24 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { momentsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Moment from './Moment';
 import AddMomentForm from './AddMomentForm'; 
 
 class Moments extends Component {
 
-  // state = {
-  //   projectId: this.props.id,
-  //   // moments: this.props
-  // };
-
   render() {
 
     if(!this.props.project) return null;
     if(!this.props.project.moments) return null;
     const { moments } = this.props.project;
-
-
 
     return (
       <Fragment>
@@ -41,5 +33,5 @@ export default connect(
     loading: state.loading,
     project: state.project
   }),
-  { momentsLoad }
+  null
 )(Moments);

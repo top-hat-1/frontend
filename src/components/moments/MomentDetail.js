@@ -5,7 +5,7 @@ class MomentDetail extends Component {
 
   render() {
 
-    const { id } = this.props.match.params;
+    const { projectId, id } = this.props;
     const { moments } = this.props;
 
     const result = moments.find(element => {

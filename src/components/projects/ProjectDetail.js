@@ -29,7 +29,7 @@ class ProjectDetail extends Component {
           <h4>{projectName}</h4>
           <p className="description-box">{description}</p>
         </div>
-        <Moments id={id}/>
+        <Moments projectId={id}/>
       </div>
     );
   }

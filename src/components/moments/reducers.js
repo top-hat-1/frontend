@@ -4,7 +4,6 @@ export const MOMENTS_LOAD = 'MOMENTS_LOAD';
 export const MOMENT_LOAD = 'MOMENT_LOAD';
 export const MOMENT_UPDATE = 'MOMENT_UPDATE';
 
-
 export function moments(state = [], { type, payload }) {
   switch(type) {
     case MOMENTS_LOAD:
