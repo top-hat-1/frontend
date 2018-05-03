@@ -38,10 +38,14 @@ class UserDetail extends Component {
               <FollowButton userId={authUser} followId={_id}/>
             </div>
             : 
-            <div className="add-project-container">
-              <AddProjectForm/>
-
-            </div>
+            <Fragment>
+              <div className="edit-profile-button">
+                <Link to="/edituser">✎</Link>
+              </div>
+              <div className="add-project-container">
+                <AddProjectForm/>
+              </div>
+            </Fragment>
           }
         </div>
         <Projects userId={_id}/>
