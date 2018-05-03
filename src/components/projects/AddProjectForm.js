@@ -28,10 +28,6 @@ class AddProjectForm extends Component {
 
   render() {
     const { projectName, description } = this.state;
-    let owner = null;
-    if(this.props.owner){
-      owner = this.props.owner._id;
-    }
     return (
       <div>
         <div>
