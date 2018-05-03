@@ -1,5 +1,21 @@
 @import '../../styles/variables.css';
 
+button {
+    background: $red;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.5rem;
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+    transition: 0.3s ease all;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #dd8080;
+}
+
 .app {
   min-height: 100vh;
   display: grid;
@@ -38,50 +54,51 @@
 }
 
 #header {
-  grid-area: header;
-  padding: 1rem;
-  text-align: center;
-  position: relative;
-  list-style: none;
+    grid-area: header;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    list-style: none;
 }
 
 #main {
-  grid-area: content;
-  text-align: center;
-  background-image: linear-gradient(90deg, #5388b3 100%, #8f9ece 0%);
-  background-size: cover;
-  list-style: none;
-  color: white;
+
+    grid-area: content;
+    text-align: center;
+    background-image: linear-gradient(90deg, #5388b3 100%, #8f9ece 0%);
+    background-size: cover;
+    list-style: none;
+    color: white;
 }
 
 #footer {
-  grid-area: footer;
-  padding: 1.5rem;
-  text-align: center;
-  color: #982828;
+    grid-area: footer;
+    padding: 1.5rem;
+    text-align: center;
+    color: $red;
 }
 
 .head-container {
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
   
   li {
     list-style-type: none;
     padding: 0 0 0 1rem;
 
     a {
-      text-decoration: none;
-      color: $black;
-      transition: 0.3s ease all;
-      padding: 0 0 3px;
-      border-bottom: 3px solid $white;
+        text-decoration: none;
+        color: $black;
+        transition: 0.3s ease all;
+        padding: 0 0 3px;
+        border-bottom: 3px solid $white;
     }
     
     a:hover {
-      color: $black;
-      border-bottom: 3px solid $red;
+        color: $black;
+        border-bottom: 3px solid $red;
     }
   }
 }
@@ -89,17 +106,17 @@
     padding: 1rem;
 }
 .flex-li {
-  display: flex;
+    display: flex;
 }
 
 .main-container {
-  text-align: left;
-  padding: 2rem 0;
+    text-align: left;
+    padding: 2rem 0;
 }
 
 .footer {
-  text-align: left;
-  color: $gray;
+    text-align: left;
+    color: $gray;
   
   a:hover {
     border-bottom: 3px solid $red;

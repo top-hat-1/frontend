@@ -55,25 +55,26 @@ class AddImage extends PureComponent {
   };
 
   render() {
-    const { image, disable } = this.state;
+    // const { image, disable } = this.state;
 
     return (
 
       <form className="user-form" onSubmit={this.handleSubmit}>
  
         <div className="picture-add">
-          <label htmlFor="image"> Add Photo:
-            <div className="image-input">
-              <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} disabled={disable} required/>
-            </div>
-          </label>
+          <input className="image-input"
+            ref={(input) => { this.pictureInput = input; }} 
+            type="file" 
+            name="image"  
+            style={{ display: 'none' }}/>
+          <input className="upload-button" type="button" value="Add Photo" onClick={() => this.pictureInput.click()}/>
 
-          <figure>
+          {/* <figure>
             <img className="preview" src={image}/>
-          </figure>
+          </figure> */}
         </div>
 
-        <button className={'form-button'} type={'submit'}>Add Image</button>
+        <button className={'form-button'} type={'submit'}>Confirm Image</button>
       </form>
     );
   }
