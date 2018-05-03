@@ -146,7 +146,7 @@ button:hover {
   .logo {
     font-size: 1.3rem;
     padding: 7px 0 0;
-    color: $black;
+    color: $red;
   }
 
   .no-line {
