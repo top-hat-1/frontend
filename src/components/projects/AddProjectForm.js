@@ -19,7 +19,13 @@ class AddProjectForm extends Component {
       coverPhotoUrl: this.props.image,
       owner: this.props.owner._id
     });
+    this.clearForm();
   };
+
+  clearForm = () => {
+    this.setState({ projectName: '' });
+    this.setState({ description: '' });
+  }
   // TODO: clear fields... setState?
 
   handleChange = ({ target }) => {

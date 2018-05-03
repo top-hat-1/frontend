@@ -25,14 +25,29 @@ class AddImage extends PureComponent {
     this.handleToggle();
 
     const { elements } = event.target;
+    
+    
 
-    this.handleUpload(elements.image.files[0])
+    this.handleImage(elements.image.files[0])
       .then(url => {
         this.props.onSubmit(url);
+        this.setState({ image: '' });
+        this.pictureInput.value = '';
       });
   };
 
-  handleUpload(file) {
+  handleUpload = ({ target }) => {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(target.files[0]);
+
+    reader.onload = () => {
+      this.setState({ image: reader.result });
+    };
+    
+  };
+
+  handleImage(file) {
     if(file.name){
       const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
       

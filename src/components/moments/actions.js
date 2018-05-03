@@ -1,4 +1,4 @@
-import { MOMENTS_LOAD, MOMENT_ADD, MOMENT_REMOVE, MOMENT_UPDATE } from './reducers';
+import { MOMENTS_LOAD, MOMENT_ADD, MOMENT_REMOVE, MOMENT_UPDATE, MOMENT_LOAD } from './reducers';
 import projectsApi from '../../services/projectsApi';
 
 export function momentsLoad(projectId) {
@@ -38,6 +38,18 @@ export function removeMoment(id) {
       .then(() => {
         dispatch({
           type: MOMENT_REMOVE,
+          payload: id
+        });
+      });
+  };
+}
+
+export function momentLoad(id){
+  return dispatch => {
+    return projectsApi.loadMoment(id)
+      .then(() => {
+        dispatch({
+          type: MOMENT_LOAD,
           payload: id
         });
       });
