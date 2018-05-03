@@ -9,8 +9,9 @@ class Moments extends Component {
   render() {
 
     if(!this.props.project) return null;
-    if(!this.props.project.moments) return null;
-    const { moments, owner } = this.props.project;
+    if(!this.props.moments) return null;
+    const { owner } = this.props.project;
+    const { moments } = this.props;
 
     let userId = null;
     if(this.props.auth) {
@@ -39,7 +40,8 @@ export default connect(
   state => ({
     loading: state.loading,
     project: state.project,
-    auth: state.auth
+    auth: state.auth,
+    moments: state.moments
   }),
   null
 )(Moments);

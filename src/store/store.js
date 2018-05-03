@@ -5,7 +5,7 @@ import { loading, error } from '../components/app/error-loading/reducers';
 import { projects, project } from '../components/projects/reducers';
 import { imageAdd, auth } from '../components/forms/reducers';
 import { moments } from '../components/moments/reducers';
-import { comments } from '../components/comments/reducers';
+import { comments, comment } from '../components/comments/reducers';
 import { addUserToState } from '../components/app/reducers';
 
 const reducer = combineReducers({
@@ -17,6 +17,7 @@ const reducer = combineReducers({
   auth,
   moments,
   comments,
+  comment,
   addUserToState
 });
 

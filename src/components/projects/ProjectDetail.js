@@ -4,11 +4,13 @@ import { projectLoad } from './actions';
 import Moments from '../moments/Moments';
 import Comments from '../comments/Comments';
 import { commentsLoad } from '../comments/actions';
+import { momentsLoad } from '../moments/actions';
 
 class ProjectDetail extends Component {
 
   componentDidMount() {
     this.props.projectLoad(this.props.id);
+    this.props.momentsLoad(this.props.id);
     this.props.commentsLoad(this.props.id);
   }
   
@@ -45,7 +47,7 @@ export default connect(
     owner: state.owner,
     projects: state.projects,
     project: state.project,
-    comments: state.comments.comments
+    comments: state.comments.comments,
   }),
-  { projectLoad, commentsLoad }
+  { projectLoad, commentsLoad, momentsLoad }
 )(ProjectDetail);
