@@ -47,10 +47,20 @@ h4 {
 
 figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight: 500;}
 
+.picture-add {
+    padding: 1rem;
+}
 .clip {
     position: absolute !important;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
+}
+.user-form {
+    text-align:center;
+}
+
+.description-box {
+    padding-bottom: 1rem;
 }
 
 img {
@@ -59,12 +69,15 @@ img {
     padding: 1rem;
 
 }
+main a {
+    color: white;
+}
 
 a {
     text-decoration: none;
     transition: 0.3s ease all;
     padding: 0 0 3px;
-    color: #992828;
+    color: #982828;
 }
 
 a:hover {
