@@ -43,7 +43,7 @@ class App extends Component {
               <Route exact path="/projects" component={Projects}/>
               <Route exact path="/auth/signup" component={Signup}/>
               <Route exact path="/auth/signin" component={Signin}/>
-              <Route exact path="/user/:id/projects" render={({ match }) => <Projects userId={match.params.id}/>} /> 
+              <Route exact path="/user/:id/projects" render={({ match }) => <UserDetail userId={match.params.id}/>} /> 
               <Route exact path="/user" component={UserDetail}/>
               <Redirect to="/"/>
             </Switch>
