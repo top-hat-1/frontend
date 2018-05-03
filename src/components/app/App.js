@@ -6,6 +6,7 @@ import ProjectDetail from '../projects/ProjectDetail';
 import MomentDetail from '../moments/MomentDetail';
 import Signup from '../forms/Signup';
 import Signin from '../forms/Signin';
+import Header from './header/Header';
 import Footer from './footer/Footer';
 import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
@@ -17,14 +18,8 @@ class App extends Component {
     return (
       <Router>
         <div id="container">
-          <header id="header">
-            <Navbar/>
-            <nav>
-              <ul>
-                <a href="/projects"><li>Hello Nav</li></a>
-              </ul>
-            </nav>
-          </header>
+          <Header/>
+          <Navbar/>
           <main id="main" role="main">
             <Switch>
               {/* <Route exact path="/" component={Home}/> */}
