@@ -11,7 +11,7 @@ import Footer from './footer/Footer';
 import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
 import EditUser from '../user/EditUser';
-import { setUserToState } from './actions';
+import { setUserToState, loadUser } from './actions';
 
 
 // the users/:id/projects route should work for any user - to see your projects, pull your id, or click on someone else and get their id
@@ -24,7 +24,7 @@ class App extends Component {
     if(localStorage.getItem('token')) {
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
-      // ADD COMMENTS, FOLLOWS ETC THAT GO INTO USER OBJECT
+      // this.props.loadUser(auth._id);
     }
     this.props.setUserToState(auth);
   }
@@ -62,6 +62,5 @@ export default connect(
     loading: state.loading,
     error: state.error
   }),
-  { setUserToState }
-  // null
+  { setUserToState, loadUser }
 )(App);

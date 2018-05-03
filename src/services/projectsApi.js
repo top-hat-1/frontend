@@ -138,6 +138,13 @@ function addFollow(followId, userId){
   }).then(r => r.json());
 }
 
+function loaduser(id) {
+  return fetch(`${URL}/users/${id}`, {
+    method: 'GET',
+    headers
+  }).then(r => r.json());
+}
+
 // TODO: addComment, removeComment, 
 // Check these requests/routes... can we add auth information into the header, do we need additional information in the body for some of these? 
 
@@ -157,5 +164,6 @@ export default {
   loadComments,
   signup,
   signin,
-  updateuser
+  updateuser,
+  loaduser
 };
