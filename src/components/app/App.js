@@ -9,12 +9,23 @@ import Signin from '../forms/Signin';
 import Footer from './footer/Footer';
 import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
+import { setUserToState } from './actions';
 
 
 // the users/:id/projects route should work for any user - to see your projects, pull your id, or click on someone else and get their id
 // <Link to={`/users/${userId}/projects`}> Whatever you want to be the link </Link> where userId is pulled off state and passed in
 // this can be applied to user photos anywhere they appear throughout the app.
 class App extends Component {
+
+  componentDidMount() {
+    const auth = {};
+    if(localStorage.getItem('token')) {
+      auth.name = localStorage.getItem('name');
+      auth._id = localStorage.getItem('_id');
+      // ADD COMMENTS, FOLLOWS ETC THAT GO INTO USER OBJECT
+    }
+    this.props.setUserToState(auth);
+  }
 
   render() {
 
@@ -54,5 +65,6 @@ export default connect(
     loading: state.loading,
     error: state.error
   }),
-  null
+  { setUserToState }
+  // null
 )(App);
