@@ -14,8 +14,6 @@ class AddProjectForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.props.auth);
-
     this.props.addProject({
       ...this.state,
       coverPhotoUrl: this.props.image,

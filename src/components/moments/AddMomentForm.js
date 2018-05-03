@@ -8,7 +8,8 @@ class AddMomentForm extends Component {
   state = {
     category: '',
     caption: '',
-    projectId: this.props.projectId
+    projectId: this.props.projectId,
+    owner: this.props.userId
   };
 
   handleSubmit = event => {
@@ -78,6 +79,7 @@ class AddMomentForm extends Component {
 export default connect(
   (state) => ({ 
     image: state.imageAdd,
+    userId: state.auth._id
   }),
   { addMoment }
 )(AddMomentForm);

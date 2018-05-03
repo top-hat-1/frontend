@@ -18,7 +18,6 @@ class Navbar extends Component {
     render() {
 
       const { state } = this.props;
-      console.log(this.props);
 
       return (
         <section className="header">
