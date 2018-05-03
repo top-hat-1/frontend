@@ -20,28 +20,29 @@ class Navbar extends Component {
       const { state } = this.props;
 
       return (
-        <section className="header">
-          <li><Link to={'/projects'}>Explore</Link></li>
-          {
-            state.auth
-              ? <div>
-                <li><button onClick={this.handleLogOut}>Log out</button></li>
-                <li><Link to={'/user'}>My Profile</Link></li>
-                <li><Link to={'#'}>My Projects</Link></li>
-              </div>
-              :
-              <Fragment>
-                <li><Link to={{ 
-                  pathname: '/auth/signin', 
-                }}>Sign In</Link></li>
-                <li><Link to={{ 
-                  pathname: '/auth/signup', 
-                }}>Sign Up</Link></li>
-              </Fragment>
-          }
-        </section>
+        <Fragment>
+          <section className="header">
+            <li><Link to={'/projects'}>Explore</Link></li>
+            {
+              state.auth 
+                ? <div>
+                  <li><button onClick={this.handleLogOut}>Log out</button></li>
+                  <li><Link to={'/user'}>My Profile</Link></li>
+                  <li><Link to={'#'}>My Projects</Link></li>
+                </div>
+                :
+                <div>
+                  <li><Link to={{ 
+                    pathname: '/auth/signin', 
+                  }}>Sign In</Link></li>
+                  <li><Link to={{ 
+                    pathname: '/auth/signup', 
+                  }}>Sign Up</Link></li>
+                </div>
+            }
+          </section>
+        </Fragment>
       );
-
     }
 }
 

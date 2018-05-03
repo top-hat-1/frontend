@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { projectsLoad } from './actions';
+import { projectLoad, projectsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Project from './Project';
 import AddProjectForm from './AddProjectForm';
@@ -44,5 +44,5 @@ export default connect(
     projects: state.projects,
     auth: state.auth
   }),
-  { projectsLoad }
+  { projectsLoad, projectLoad }
 )(Projects);

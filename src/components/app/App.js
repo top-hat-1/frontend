@@ -20,8 +20,9 @@ import { setUserToState, loadUser } from './actions';
 class App extends Component {
 
   componentWillMount() {
-    const auth = {};
+    let auth = null;
     if(localStorage.getItem('token')) {
+      auth = {};
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
       // this.props.loadUser(auth._id);
