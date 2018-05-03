@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { projectsLoad } from './actions';
+import { projectLoad, projectsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Project from './Project';
 import AddProjectForm from './AddProjectForm';
@@ -9,7 +10,7 @@ class Projects extends Component {
 
   componentDidMount() {
     this.props.userId ?  // did a userId get passed as a prop on this? 
-      this.props.projectLoad(this.props.userId) // then load that user's projects.... link in nav bar to users/:id/projects, call Projects component w/ userId=match params
+      this.props.projectsLoad(this.props.userId) // then load that user's projects.... link in nav bar to users/:id/projects, call Projects component w/ userId=match params
       :
       this.props.projectsLoad(); // else call without user id if we're not looking for a specific user
   }
@@ -17,10 +18,12 @@ class Projects extends Component {
   render() {
 
     const { projects } = this.props;
+    const { _id } = this.props.auth; // ONLY for testing link to user detail
 
     return (
       <Fragment>
         <AddProjectForm/>
+        <Link to={`/user/${_id}/projects`}>LINK TO ME</Link>
         {projects && projects[0] ?
           <div>
             <h3 className="projects-title">Projects</h3>
@@ -38,7 +41,8 @@ class Projects extends Component {
 export default connect(
   state => ({
     loading: state.loading,
-    projects: state.projects
+    projects: state.projects,
+    auth: state.auth
   }),
-  { projectsLoad }
+  { projectsLoad, projectLoad }
 )(Projects);

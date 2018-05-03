@@ -7,6 +7,7 @@ import { imageAdd, auth } from '../components/forms/reducers';
 import { moments } from '../components/moments/reducers';
 import { comments } from '../components/comments/reducers';
 import { addUserToState } from '../components/app/reducers';
+import { following } from '../components/follow/reducers';
 
 const reducer = combineReducers({
   loading,
@@ -17,7 +18,8 @@ const reducer = combineReducers({
   auth,
   moments,
   comments,
-  addUserToState
+  addUserToState,
+  following
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
