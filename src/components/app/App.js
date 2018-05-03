@@ -25,7 +25,7 @@ class App extends Component {
       auth = {};
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
-      this.props.loadUser(auth._id);
+      // this.props.loadUser(auth._id);
     }
     this.props.setUserToState(auth);
   }
@@ -59,9 +59,9 @@ class App extends Component {
 }
 
 export default connect(
-  state => ({ 
+  (state) => ({ 
     loading: state.loading,
-    error: state.error
+    error: state.error,
   }),
   { setUserToState, loadUser }
 )(App);
