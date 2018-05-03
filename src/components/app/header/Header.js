@@ -11,7 +11,7 @@ export default class Header extends Component {
           <Link to="/" className="no-line"><h1 className="logo">DabbleDo</h1></Link>
           <div>
             <nav id="main-menu">
-              <Link to="/" className="no-line"><h1 className="mobile-logo">DabbleDo</h1></Link>
+              <Link to="/" className="no-line1"><h1 className="mobile-logo">DabbleDo</h1></Link>
             </nav>
           </div>
         </section> 

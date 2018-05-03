@@ -10,12 +10,27 @@
   grid-template-rows: auto 1fr auto;
 }
 
+.no-line1 {
+    display: none;
+}
 
 .maxwidth-wrap {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   animation: pageSlide 1s ease-out;
+}
+
+.form-submit {
+    color: white;
+}
+
+.sign-up {
+    padding: 1rem;
+}
+
+.sign-in {
+    padding: 1rem;
 }
 
 @keyframes pageSlide {
@@ -40,7 +55,7 @@
 #main {
   grid-area: content;
   text-align: center;
-  background-image: linear-gradient(90deg, #5363b3 100%, #7d81b1 0%);
+  background-image: linear-gradient(90deg, #5388b3 100%, #8f9ece 0%);
   background-size: cover;
   list-style: none;
 }

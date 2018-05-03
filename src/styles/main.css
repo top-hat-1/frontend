@@ -13,12 +13,6 @@ body {
     list-style: none;
 }
 
-p {
-    margin-bottom: 1.3em;
-    line-height: 1.7;
-}
-
-/* Font sizing from http://type-scale.com/ */
 h1, h2, h3, h4 {
     line-height: 1.1;
     letter-spacing: 3px;
@@ -37,7 +31,12 @@ h2 {font-size: 2.827em;}
 
 h3 {font-size: 1.999em;}
 
-h4 {font-size: 1.414em;}
+h4 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.414em;
+    color: white;
+}
 
 figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight: 500;}
 
