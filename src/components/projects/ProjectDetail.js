@@ -11,15 +11,14 @@ class ProjectDetail extends Component {
     this.props.projectLoad(this.props.id);
     this.props.commentsLoad(this.props.id);
   }
-
+  
   render() {
-
-    const { projects, id, comments } = this.props;
-
-    const result = projects ? 
+    const { project, projects, id, comments } = this.props;
+    
+    const result = projects[0] ? 
       projects.find(element => {
         return element._id === id;
-      }) : this.props.project;
+      }) : project;
 
     if(!result) return null;
 
