@@ -26,18 +26,6 @@
   animation: pageSlide 1s ease-out;
 }
 
-.form-submit {
-    color: white;
-}
-
-.sign-up {
-    padding: 1rem;
-}
-
-.sign-in {
-    padding: 1rem;
-}
-
 @keyframes pageSlide {
   0% {
     opacity: 0;
@@ -97,7 +85,9 @@
     }
   }
 }
-
+.header {
+    padding: 1rem;
+}
 .flex-li {
   display: flex;
 }
@@ -110,10 +100,6 @@
 .footer {
   text-align: left;
   color: $gray;
-
-  a {
-    border-bottom: 3px solid $white;
-  }
   
   a:hover {
     border-bottom: 3px solid $red;
@@ -164,8 +150,8 @@
   }
 
   .logo {
-    font-size: 2rem;
-    transition: 0.3s ease all;
+    font-size: 3rem;
+    transition: 0.8s ease all;
 
     &:hover {
       color: $gray;
@@ -176,13 +162,5 @@
     display: flex;
     justify-content: space-between;
     font-size: 1rem;
-  }
-
-  .nav-ul{
-    display: flex;
-  }
-
-  .checkbox {
-    display: none;
   }
 }

@@ -24,24 +24,24 @@ h1, h2, h3, h4 {
 
 h1 {
     margin: 0 0 0.5rem;
-    font-size: 3.598em;
+    font-size: 2em;
     color: white;
 }
 
 h2 {
-    font-size: 2.827em;
+    font-size: 2em;
     color: white;
 }
 
 h3 {
-    font-size: 1.999em;
+    font-size: 2em;
     color: white;
 }
 
 h4 {
     padding: 1rem;
     margin: 0;
-    font-size: 1.414em;
+    font-size: 2em;
     color: white;
 }
 
