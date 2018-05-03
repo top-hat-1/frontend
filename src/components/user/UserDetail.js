@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
@@ -21,6 +21,7 @@ class Navbar extends Component {
             ? <div>
               <p>User Info Here</p>
               <h2>{this.props.state.auth.name}</h2>
+              <button><Link to={'/edituser'}>Edit</Link></button>
             </div>
             :
             <Fragment>
