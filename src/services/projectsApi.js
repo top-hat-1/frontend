@@ -116,10 +116,21 @@ function removeProject(id) {
   }).then(r => r.json());
 }
 
+function addFollow(followId, userId){
+  let toFollow = {};
+  toFollow['_id'] = followId;
+  return fetch(`${URL}/users/${userId}/following`, {
+    method: 'POST',
+    body: JSON.stringify(toFollow),
+    headers
+  }).then(r => r.json());
+}
+
 // TODO: addComment, removeComment, 
 // Check these requests/routes... can we add auth information into the header, do we need additional information in the body for some of these? 
 
 export default {
+  addFollow,
   loadProjects,
   loadProject,
   sendProject,
