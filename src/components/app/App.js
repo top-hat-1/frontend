@@ -8,7 +8,6 @@ import Signup from '../forms/Signup';
 import Signin from '../forms/Signin';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
 import EditUser from '../user/EditUser';
 import { setUserToState, loadUser } from './actions';
@@ -36,7 +35,6 @@ class App extends Component {
       <Router>
         <div id="container">
           <Header/>
-          <Navbar/>
           <main id="main" role="main">
             <Switch>
               {/* <Route exact path="/" component={Home}/> */}

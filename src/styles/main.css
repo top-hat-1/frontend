@@ -17,46 +17,81 @@ h1, h2, h3, h4 {
     line-height: 1.1;
     letter-spacing: 3px;
     padding: 0 0 0rem 0;
-    color: #992828;
+    color: $red;
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
 }
 
 h1 {
     margin: 0 0 0.5rem;
-    font-size: 3.598em;
+    font-size: 2em;
+    color: white;
 }
 
-h2 {font-size: 2.827em;}
+h2 {
+    font-size: 2em;
+    color: white;
+}
 
-h3 {font-size: 1.999em;}
+h3 {
+    font-size: 2em;
+    color: white;
+}
 
 h4 {
     padding: 1rem;
     margin: 0;
-    font-size: 1.414em;
+    font-size: 2em;
     color: white;
 }
 
 figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight: 500;}
 
+.picture-add {
+    padding: 1rem;
+}
 .clip {
     position: absolute !important;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
 }
+.upload-button {
+    background: $red;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.5rem;
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+    transition: 0.3s ease all;
+    cursor: pointer;
+}
+.upload-button:hover {
+    background: #dd8080;
+}
+.user-form {
+    text-align:center;
+}
+
+.description-box {
+    padding-bottom: 1rem;
+}
 
 img {
-    display: block;
-    width: 120%;
+    width: 50%;
     height: auto;
+    padding: 1rem;
+
+}
+main a {
+    color: white;
 }
 
 a {
     text-decoration: none;
-    color: $black;
     transition: 0.3s ease all;
     padding: 0 0 3px;
+    color: $red;
 }
 
 a:hover {
