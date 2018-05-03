@@ -116,6 +116,18 @@ function removeProject(id) {
   }).then(r => r.json());
 }
 
+function updateuser(image, hobbies, id) {
+  return fetch(`${URL}/users/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      photo: image,
+      hobbies: hobbies,
+      _id: id
+    }),
+    headers
+  }).then(r => r.json());
+}
+
 // TODO: addComment, removeComment, 
 // Check these requests/routes... can we add auth information into the header, do we need additional information in the body for some of these? 
 
@@ -133,5 +145,6 @@ export default {
   sendRemoveComment,
   loadComments,
   signup,
-  signin
+  signin,
+  updateuser
 };

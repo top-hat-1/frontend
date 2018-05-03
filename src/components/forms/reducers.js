@@ -4,7 +4,7 @@ export const IMAGE_ADD = 'IMAGE_ADD';
 export const SIGN_UP = 'SIGN_UP';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
-
+export const AVI_ADD = 'AVI_ADD';
 
 export const imageAdd = (state = null, { type, payload }) => {
   switch(type){
@@ -24,6 +24,11 @@ export const auth = (state = null, { type, payload }) => {
       return payload;
     case SIGN_OUT:
       return payload;
+    case AVI_ADD:
+      return { 
+        ...state,
+        payload
+      };
     default:
       return state;
   }

@@ -9,6 +9,7 @@ import Signin from '../forms/Signin';
 import Footer from './footer/Footer';
 import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
+import EditUser from '../user/EditUser';
 import { setUserToState } from './actions';
 
 
@@ -50,7 +51,8 @@ class App extends Component {
               <Route exact path="/auth/signin" component={Signin}/>
               <Route exact path="/user/:id/projects" render={({ match }) => <Projects userId={match.params.id}/>} /> 
               <Route exact path="/user" component={UserDetail}/>
-              <Redirect to="/"/>
+              <Route exact path="/edituser" component={EditUser}/>>
+              <Redirect to="/projects"/>
             </Switch>
           </main>
           <Footer/>
