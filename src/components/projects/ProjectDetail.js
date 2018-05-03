@@ -35,7 +35,7 @@ class ProjectDetail extends Component {
         <div className="project-details"> 
           <p className="description-box">{description}</p>
         </div>
-        <Moments projectId={id}/> 
+        <Moments projectId={_id}/> 
         <Comments projectId={_id} comments={comments}/>
       </div>
     );
@@ -47,7 +47,7 @@ export default connect(
     owner: state.owner,
     projects: state.projects,
     project: state.project,
-    comments: state.comments.comments,
+    comments: state.comments
   }),
   { projectLoad, commentsLoad, momentsLoad }
 )(ProjectDetail);

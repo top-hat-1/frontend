@@ -18,19 +18,3 @@ export function comments(state = [], { type, payload }) {
       return state;
   }
 }
-
-export function comment(state = [], { type, payload }) {
-  switch(type) {
-
-    case COMMENT_LOAD:
-      return payload;
-
-    case COMMENT_REMOVE:
-      return null;
-    
-    // TODO comment update?? STRETCH
-
-    default:
-      return state;
-  }
-}
