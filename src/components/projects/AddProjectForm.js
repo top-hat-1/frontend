@@ -40,7 +40,7 @@ class AddProjectForm extends Component {
               <AddImage/>
               <form className="add-project-form" onSubmit={this.handleSubmit}>
                 <label htmlFor="projectName">
-                  <input 
+                  <input className="project-placeholder" 
                     name="projectName"
                     required 
                     placeholder={projectName ? { projectName } : 'Project Name'}
@@ -48,9 +48,9 @@ class AddProjectForm extends Component {
                     onChange={this.handleChange}/>
                 </label>
                 <label htmlFor="description">
-                  <input 
+                  <input className="project-placeholder"
                     name="description" 
-                    placeholder={description ? { description } : 'Description'}
+                    placeholder={description ? { description } : 'Short Description'}
                     value={description}
                     onChange={this.handleChange}/>
                 </label>
