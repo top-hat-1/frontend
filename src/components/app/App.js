@@ -19,7 +19,7 @@ import { setUserToState, loadUser } from './actions';
 // this can be applied to user photos anywhere they appear throughout the app.
 class App extends Component {
 
-  componentDidMount() {
+  componentWillMount() {
     const auth = {};
     if(localStorage.getItem('token')) {
       auth.name = localStorage.getItem('name');
@@ -28,8 +28,8 @@ class App extends Component {
     }
     this.props.setUserToState(auth);
   }
-
-  render() {
+  
+  render() {    
 
     return (
       <Router>
@@ -45,8 +45,7 @@ class App extends Component {
               <Route exact path="/auth/signup" component={Signup}/>
               <Route exact path="/auth/signin" component={Signin}/>
               <Route exact path="/user/:id/projects" render={({ match }) => <UserDetail userId={match.params.id}/>} /> 
-              <Route exact path="/user" component={UserDetail}/>
-              <Route exact path="/edituser" component={EditUser}/>>
+              <Route exact path="/edituser" component={EditUser}/>
               <Redirect to="/projects"/>
             </Switch>
           </main>
@@ -60,7 +59,8 @@ class App extends Component {
 export default connect(
   state => ({ 
     loading: state.loading,
-    error: state.error
+    error: state.error,
+    state: state
   }),
   { setUserToState, loadUser }
 )(App);

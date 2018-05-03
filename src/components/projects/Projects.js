@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { projectsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
@@ -17,10 +18,12 @@ class Projects extends Component {
   render() {
 
     const { projects } = this.props;
+    const { _id } = this.props.auth
 
     return (
       <Fragment>
         <AddProjectForm/>
+        <Link to={`/user/${_id}/projects`}>LINK TO ME</Link>
         {projects && projects[0] ?
           <div>
             <h3 className="projects-title">Projects</h3>

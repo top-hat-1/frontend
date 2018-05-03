@@ -8,6 +8,8 @@ import FollowButton from '../follow/FollowButton';
 
 // TODO get user into state, map to props
 
+
+
 class UserDetail extends Component {
 
   componentDidMount(){
