@@ -44,6 +44,13 @@ function loadMoments(projectId) {
     .then(r => r.json());
 }
 
+function loadMoment(id) {
+  return fetch(`${URL}/moments/${id}`, {
+    method: 'GET',
+    headers
+  }).then(r => r.json());
+}
+
 function sendMoment(moment){
   return fetch(`${URL}/moments`, {
     method: 'POST',
@@ -156,6 +163,7 @@ export default {
   updateProject,
   removeProject,
   loadMoments,
+  loadMoment,
   sendMoment,
   sendMomentUpdate,
   sendMomentRemove,

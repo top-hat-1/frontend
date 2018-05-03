@@ -4,9 +4,9 @@ import promiseMiddleware from './promiseMiddleware';
 import { loading, error } from '../components/app/error-loading/reducers';
 import { projects, project } from '../components/projects/reducers';
 import { imageAdd, auth } from '../components/forms/reducers';
-import { moments } from '../components/moments/reducers';
+import { moments, moment } from '../components/moments/reducers';
 import { comments } from '../components/comments/reducers';
-import { addUserToState } from '../components/app/reducers';
+import { user } from '../components/app/reducers';
 import { following } from '../components/follow/reducers';
 
 const reducer = combineReducers({
@@ -17,8 +17,9 @@ const reducer = combineReducers({
   imageAdd,
   auth,
   moments,
+  moment,
   comments,
-  addUserToState,
+  user,
   following
 });
 
