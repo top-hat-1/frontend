@@ -34,31 +34,27 @@ class AddProjectForm extends Component {
     }
     return (
       <div>
-        {
-          owner
-            ? <div>
-              <AddImage/>
-              <form className="add-project-form" onSubmit={this.handleSubmit}>
-                <label htmlFor="projectName">
-                  <input 
-                    name="projectName"
-                    required 
-                    placeholder={projectName ? { projectName } : 'Project Name'}
-                    value={projectName}
-                    onChange={this.handleChange}/>
-                </label>
-                <label htmlFor="description">
-                  <input 
-                    name="description" 
-                    placeholder={description ? { description } : 'Description'}
-                    value={description}
-                    onChange={this.handleChange}/>
-                </label>
-                <button type="submit">Add Project</button>
-              </form>
-            </div>
-            : null
-        }
+        <div>
+          <AddImage/>
+          <form className="add-project-form" onSubmit={this.handleSubmit}>
+            <label htmlFor="projectName">
+              <input 
+                name="projectName"
+                required 
+                placeholder={projectName ? { projectName } : 'Project Name'}
+                value={projectName}
+                onChange={this.handleChange}/>
+            </label>
+            <label htmlFor="description">
+              <input 
+                name="description" 
+                placeholder={description ? { description } : 'Description'}
+                value={description}
+                onChange={this.handleChange}/>
+            </label>
+            <button type="submit">Add Project</button>
+          </form>
+        </div>
       </div>
     );
   }

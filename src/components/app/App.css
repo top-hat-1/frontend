@@ -10,6 +10,9 @@
   grid-template-rows: auto 1fr auto;
 }
 
+.no-line1 {
+    display: none;
+}
 
 .maxwidth-wrap {
   max-width: 1200px;
@@ -18,11 +21,19 @@
   animation: pageSlide 1s ease-out;
 }
 
+.form-submit {
+    color: white;
+}
+
+.sign-up {
+    padding: 1rem;
+}
+
+.sign-in {
+    padding: 1rem;
+}
+
 @keyframes pageSlide {
-  /* 0% {
-    opacity: .0;
-    transform: translate(0, 100%);
-  } */
   0% {
     opacity: 0;
     transform: translate(0, 0%);
@@ -33,26 +44,20 @@
   }
 }
 
-/* main {
-  article {
-    animation: pageSlide 1s ease-out;
-  }
-} */
-
-
 #header {
   grid-area: header;
   padding: 1rem;
   text-align: center;
   position: relative;
-  /* background-color: $green; */
+  list-style: none;
 }
 
 #main {
   grid-area: content;
   text-align: center;
-  background-image: linear-gradient(90deg, #f5f5f5 100%, #dbdbdb 0%);
+  background-image: linear-gradient(90deg, #5388b3 100%, #8f9ece 0%);
   background-size: cover;
+  list-style: none;
 }
 
 #footer {
