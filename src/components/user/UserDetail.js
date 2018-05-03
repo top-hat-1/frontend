@@ -4,23 +4,29 @@ import { connect } from 'react-redux';
 import Projects from '../projects/Projects';
 import AddProjectForm from '../projects/AddProjectForm';
 import FollowButton from '../follow/FollowButton';
+import { loadUser } from '../app/actions';
 
 // TODO get user into state, map to props
 
 class UserDetail extends Component {
 
+  componentWillMount() {
+    const _id = this.props.userId;
+    this.props.loadUser(_id);
+  }
+
   render() {
 
-    // const { _id, name, hobbies, photo } = this.props.user;  // _id belongs to the user whose page we are viewing, 
+    const { _id, name, hobbies, photo } = this.props.user;  // _id belongs to the user whose page we are viewing, 
     const authUser = this.props.userId;    //authUser is id of signed-in user
-    const _id = this.props.userId;
+    // const _id = this.props.userId;
 
     return (
       <Fragment>
         <div className="user-details" >
-          {/* <h2>{name}</h2> */}
-          {/* <img className="user-photo" src={photo}/>
-          <p className="hobby-box">{hobbies}</p> */}
+          <h2>{name}</h2> 
+          <img className="user-photo" src={photo}/>
+          <p className="hobby-box">{hobbies}</p>
           {authUser !== _id 
             ?
             <div className="follow-button-container">
@@ -45,6 +51,7 @@ class UserDetail extends Component {
 
 export default connect(
   state => ({
-    // user: state.user,
+    user: state.addUserToState,
   }),
+  { loadUser }
 )(UserDetail);

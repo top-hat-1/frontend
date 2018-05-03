@@ -10,7 +10,7 @@ class Projects extends Component {
 
   componentDidMount() {
     this.props.userId ?  // did a userId get passed as a prop on this? 
-      this.props.projectLoad(this.props.userId) // then load that user's projects.... link in nav bar to users/:id/projects, call Projects component w/ userId=match params
+      this.props.projectsLoad(this.props.userId) // then load that user's projects.... link in nav bar to users/:id/projects, call Projects component w/ userId=match params
       :
       this.props.projectsLoad(); // else call without user id if we're not looking for a specific user
   }
@@ -18,7 +18,7 @@ class Projects extends Component {
   render() {
 
     const { projects } = this.props;
-    const { _id } = this.props.auth
+    const { _id } = this.props.auth; // ONLY for testing link to user detail
 
     return (
       <Fragment>
