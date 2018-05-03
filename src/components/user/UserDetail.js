@@ -15,7 +15,7 @@ class UserDetail extends Component {
       let auth = {};
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
-      this.props.loadUser(auth._id);
+      this.props.loadUser(this.props.userId.userId);
     }
   }
 
@@ -27,8 +27,8 @@ class UserDetail extends Component {
 
     return (
 
-      <Fragment className="user-detail">
-        <div>
+      <Fragment>
+        <div className="user-detail">
           <h2>{name}</h2>
           <img className="user-photo" src={photo}/>
           <p className="hobby-box">{hobbies}</p>
@@ -55,7 +55,10 @@ class UserDetail extends Component {
 }
 
 export default connect(
-  state => ({
+  (state, ownProps) => ({
+    state: state,
+    userId: ownProps,
     user: state.user
   }),
+  { loadUser }
 )(UserDetail);

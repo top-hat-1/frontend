@@ -6,7 +6,7 @@ import { projects, project } from '../components/projects/reducers';
 import { imageAdd, auth } from '../components/forms/reducers';
 import { moments, moment } from '../components/moments/reducers';
 import { comments } from '../components/comments/reducers';
-import { addUserToState } from '../components/app/reducers';
+import { user } from '../components/app/reducers';
 import { following } from '../components/follow/reducers';
 
 const reducer = combineReducers({
@@ -19,7 +19,7 @@ const reducer = combineReducers({
   moments,
   moment,
   comments,
-  addUserToState,
+  user,
   following
 });
 
