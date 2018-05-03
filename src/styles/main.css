@@ -25,11 +25,18 @@ h1, h2, h3, h4 {
 h1 {
     margin: 0 0 0.5rem;
     font-size: 3.598em;
+    color: white;
 }
 
-h2 {font-size: 2.827em;}
+h2 {
+    font-size: 2.827em;
+    color: white;
+}
 
-h3 {font-size: 1.999em;}
+h3 {
+    font-size: 1.999em;
+    color: white;
+}
 
 h4 {
     padding: 1rem;
@@ -47,16 +54,17 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
 }
 
 img {
-    display: block;
-    width: 120%;
+    width: 50%;
     height: auto;
+    padding: 1rem;
+
 }
 
 a {
     text-decoration: none;
-    color: $black;
     transition: 0.3s ease all;
     padding: 0 0 3px;
+    color: #992828;
 }
 
 a:hover {
