@@ -2,6 +2,11 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
+// TODO: call projects component. 
+//follow button. 
+//add project form IF userid of profile matches signed in user
+
 class Navbar extends Component {
 
   render() {

@@ -125,6 +125,16 @@ function updateuser(image, hobbies, id) {
       _id: id
     }),
     headers
+    }).then(r => r.json());
+ }
+    
+function addFollow(followId, userId){
+  let toFollow = {};
+  toFollow['_id'] = followId;
+  return fetch(`${URL}/users/${userId}/following`, {
+    method: 'POST',
+    body: JSON.stringify(toFollow),
+    headers
   }).then(r => r.json());
 }
 
@@ -132,6 +142,7 @@ function updateuser(image, hobbies, id) {
 // Check these requests/routes... can we add auth information into the header, do we need additional information in the body for some of these? 
 
 export default {
+  addFollow,
   loadProjects,
   loadProject,
   sendProject,

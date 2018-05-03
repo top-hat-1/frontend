@@ -38,7 +38,8 @@ class Projects extends Component {
 export default connect(
   state => ({
     loading: state.loading,
-    projects: state.projects
+    projects: state.projects,
+    auth: state.auth
   }),
   { projectsLoad }
 )(Projects);
