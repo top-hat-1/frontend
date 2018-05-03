@@ -125,8 +125,8 @@ function updateuser(image, hobbies, id) {
       _id: id
     }),
     headers
-    }).then(r => r.json());
- }
+  }).then(r => r.json());
+}
     
 function addFollow(followId, userId){
   let toFollow = {};

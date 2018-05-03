@@ -10,7 +10,7 @@ import FollowButton from '../follow/FollowButton';
 
 class UserDetail extends Component {
 
-  componentDidMount(){
+  componentWillMount(){
     if(localStorage.getItem('token')) {
       let auth = {};
       auth.name = localStorage.getItem('name');
@@ -40,6 +40,7 @@ class UserDetail extends Component {
             : 
             <div className="add-project-container">
               <AddProjectForm/>
+
             </div>
           }
         </div>
