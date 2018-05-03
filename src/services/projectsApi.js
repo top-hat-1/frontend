@@ -24,7 +24,7 @@ function loadProjects(userId = null) {
 }
 
 function loadProject(id) {
-  return fetch(`${PROJECTS_URL}/${id}/moments`, {
+  return fetch(`${PROJECTS_URL}/${id}`, {
     method: 'GET',
     headers
   })

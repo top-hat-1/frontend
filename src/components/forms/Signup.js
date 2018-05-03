@@ -49,7 +49,7 @@ class Signup extends PureComponent {
             </label>
           </div>
 
-          <div>
+          <div className='sign-up'>
             <label>
               <div>
                 <button>Sign up</button>
