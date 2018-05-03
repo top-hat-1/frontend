@@ -18,6 +18,7 @@ class Navbar extends Component {
     render() {
 
       const { state } = this.props;
+      const { _id } = state.auth;
 
       return (
         <section className="header">
@@ -26,7 +27,7 @@ class Navbar extends Component {
             state.auth
               ? <div>
                 <li><button onClick={this.handleLogOut}>Log out</button></li>
-                <li><Link to={'/user'}>My Profile</Link></li>
+                <li><Link to={`/user/${_id}/projects`}>My Profile</Link></li>
                 <li><Link to={'#'}>My Projects</Link></li>
               </div>
               :
