@@ -8,7 +8,6 @@ class Comments extends Component {
 
   render() {
 
-    // if(!this.props.project) return null;
     if(!this.props.comments) return null;
     let userId = null;
     if(this.props.auth) {

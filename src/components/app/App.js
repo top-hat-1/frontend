@@ -9,7 +9,8 @@ import Signin from '../forms/Signin';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 import UserDetail from '../user/UserDetail';
-import { setUserToState } from './actions';
+import EditUser from '../user/EditUser';
+import { setUserToState, loadUser } from './actions';
 
 
 // the users/:id/projects route should work for any user - to see your projects, pull your id, or click on someone else and get their id
@@ -17,12 +18,13 @@ import { setUserToState } from './actions';
 // this can be applied to user photos anywhere they appear throughout the app.
 class App extends Component {
 
-  componentDidMount() {
-    const auth = {};
+  componentWillMount() {
+    let auth = null;
     if(localStorage.getItem('token')) {
+      auth = {};
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
-      // ADD COMMENTS, FOLLOWS ETC THAT GO INTO USER OBJECT
+      this.props.loadUser(auth._id);
     }
     this.props.setUserToState(auth);
   }
@@ -41,9 +43,10 @@ class App extends Component {
               <Route exact path="/projects" component={Projects}/>
               <Route exact path="/auth/signup" component={Signup}/>
               <Route exact path="/auth/signin" component={Signin}/>
-              <Route exact path="/user/:id/projects" render={({ match }) => <Projects userId={match.params.id}/>} /> 
+              <Route exact path="/user/:id/projects" render={({ match }) => <UserDetail userId={match.params.id}/>} /> 
               <Route exact path="/user" component={UserDetail}/>
-              <Redirect to="/"/>
+              <Route exact path="/edituser" component={EditUser}/>>
+              <Redirect to="/projects"/>
             </Switch>
           </main>
           <Footer/>
@@ -58,6 +61,5 @@ export default connect(
     loading: state.loading,
     error: state.error
   }),
-  { setUserToState }
-  // null
+  { setUserToState, loadUser }
 )(App);
