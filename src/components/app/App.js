@@ -19,12 +19,13 @@ import { setUserToState, loadUser } from './actions';
 // this can be applied to user photos anywhere they appear throughout the app.
 class App extends Component {
 
-  componentDidMount() {
-    const auth = {};
+  componentWillMount() {
+    let auth = null;
     if(localStorage.getItem('token')) {
+      auth = {};
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
-      // this.props.loadUser(auth._id);
+      this.props.loadUser(auth._id);
     }
     this.props.setUserToState(auth);
   }

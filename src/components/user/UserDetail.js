@@ -10,7 +10,7 @@ import { loadUser } from '../app/actions';
 
 class Navbar extends Component {
 
-  componentDidMount(){
+  componentWillMount(){
     if(localStorage.getItem('token')) {
       let auth = {};
       auth.name = localStorage.getItem('name');
@@ -22,17 +22,16 @@ class Navbar extends Component {
   render() {
 
     const { state } = this.props;
-    console.log(this.props);
 
     return (
       <section className="header">
         {
-          state.auth
+          state.addUserToState
             ? <div>
               <p>User Info Here</p>
-              <h2>{state.auth.name}</h2>
-              <img src={state.photo}/>
-              <p>{state.hobbies}</p>
+              <h2>{state.addUserToState.name}</h2>
+              <img src={state.addUserToState.photo}/>
+              <p>{state.addUserToState.hobbies}</p>
               <button><Link to={'/edituser'}>Edit</Link></button>
             </div>
             :
