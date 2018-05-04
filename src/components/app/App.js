@@ -13,10 +13,6 @@ import EditUser from '../user/EditUser';
 import Following from '../follow/Following';
 import { setUserToState, loadUser } from './actions';
 
-
-// the users/:id/projects route should work for any user - to see your projects, pull your id, or click on someone else and get their id
-// <Link to={`/users/${userId}/projects`}> Whatever you want to be the link </Link> where userId is pulled off state and passed in
-// this can be applied to user photos anywhere they appear throughout the app.
 class App extends Component {
 
   componentWillMount() {
