@@ -21,6 +21,8 @@ class UserDetail extends Component {
 
   render() {
 
+    if(!this.props.user) return null;
+
     const { _id, name, hobbies, photo } = this.props.user;  // _id belongs to the user whose page we are viewing, 
     const authUser = this.props.userId;    //authUser is signed in user
 
