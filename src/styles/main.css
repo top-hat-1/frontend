@@ -63,6 +63,11 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
     clip: rect(1px, 1px, 1px, 1px);
 }
 
+.choose-file input {
+    border-style: solid;
+    border-color: white;
+    border-width: .05rem;
+}
 .user-detail {
     padding-top: .5rem;
 }
