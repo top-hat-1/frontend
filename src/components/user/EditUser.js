@@ -75,7 +75,7 @@ class EditUser extends PureComponent {
             <img className="preview" src={image}/>
           </figure>
 
-          <label htmlFor="hobbies"> What do you like to do?
+          <label htmlFor="hobbies"> What do you like to do?  
             <input name="hobbies"/>
           </label>
         </div>
