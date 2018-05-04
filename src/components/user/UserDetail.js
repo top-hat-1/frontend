@@ -7,8 +7,6 @@ import Projects from '../projects/Projects';
 import AddProjectForm from '../projects/AddProjectForm';
 import FollowButton from '../follow/FollowButton';
 
-// TODO get user into state, map to props
-
 class UserDetail extends Component {
 
   componentWillMount(){
@@ -25,7 +23,6 @@ class UserDetail extends Component {
 
     const { _id, name, hobbies, photo } = this.props.user;  // _id belongs to the user whose page we are viewing, 
     const authUser = this.props.userId;    //authUser is signed in user
-
 
     return (
 
