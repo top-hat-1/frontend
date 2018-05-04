@@ -4,15 +4,16 @@ import { addToFollowing } from './actions';
 
 class FollowButton extends PureComponent {
 
-  handleClick(){
-    const followId = this.props;
-    const userId = this.props;
+  handleClick(followId, userId){
     this.props.addToFollowing(followId, userId);
   }
+
   render() {
 
+    const { followId, userId } = this.props;
+
     return (
-      <button onClick={this.handleClick}>Follow</button>
+      <button onClick={() => { this.handleClick(followId, userId); }}>Follow</button>
     );
   }
 }
