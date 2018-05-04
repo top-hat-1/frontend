@@ -66,6 +66,10 @@ button.logout-button {
     font-size: 1rem;
     font-weight: 400;
 }
+button.logout-button:hover{
+    background: white;
+    text-decoration: underline $black;
+}
 
 figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight: 500;}
 

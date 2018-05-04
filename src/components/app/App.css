@@ -111,7 +111,7 @@ button:hover {
     
     a:hover {
         color: $black;
-        border-bottom: 3px solid $black;
+        text-decoration: underline;
     }
   }
 }
@@ -132,7 +132,7 @@ button:hover {
     color: $gray;
   
   a:hover {
-    border-bottom: 3px solid $black;
+    text-decoration: underline;
   }
 }
 
