@@ -4,7 +4,6 @@ export function following(state = [], { type, payload }) {
   switch(type) {
     case FOLLOW_ADD:
       return [
-        ...state,
         payload
       ];
     default:
