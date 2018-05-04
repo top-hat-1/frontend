@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-// TODO STRETCH: Add a link to user by comment
+import { Link } from 'react-router-dom';
 
 class Comment extends Component {
 
   render() {
 
-    const { comment, user } = this.props;
+    const { comment, name, userId } = this.props;
 
     return (
       <div>
         <li className="comment-li">
-          {/* <img className="comment-photo" src={user.photo}/> */}
-          {/* <h4>{user.name}</h4> */}
+          <Link to={`/user/${userId}/projects`}><h4>{name}</h4></Link>
           <p className="comment-box">{comment}</p>
         </li>
       </div>
@@ -23,7 +21,8 @@ class Comment extends Component {
 
 export default connect(
   state => ({
-    user: state.user
+    user: state.user,
+    comments: state.comments
   }),
   null
 )(Comment);

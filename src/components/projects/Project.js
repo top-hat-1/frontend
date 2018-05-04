@@ -6,13 +6,13 @@ class Project extends Component {
 
   render() {
 
-    const { _id, projectName, coverPhotoUrl, description, owner } = this.props;
+    const { _id, projectName, coverPhotoUrl, description, owner, name } = this.props;
     
     return (
       <li className="project-li">
         <div className="image-wrap"> 
           <h4><Link to={`/projects/${_id}`}>{projectName}</Link></h4>
-          {(owner.length < 20) ? <h6>{owner}</h6> : null}
+          <h5>By {name}</h5>
           <Link to={`/projects/${_id}`}><img src={coverPhotoUrl} height={50} width={50}/></Link> {/*remove styling*/}
         </div>
         <div className="project-details">

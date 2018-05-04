@@ -17,7 +17,7 @@ h1, h2, h3, h4 {
     line-height: 1.1;
     letter-spacing: 3px;
     padding: 0 0 0rem 0;
-    color: $red;
+    color: $black;
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
 }
@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5rem;
     color: white;
 }
 
@@ -52,6 +52,25 @@ h4 {
     color: white;
 }
 
+button.logout-button {
+    background: none;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    padding: 0 0 3px;
+    font-family: 'Nunito', sans-serif;
+    color: $black;
+    min-height: 100%;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 400;
+}
+button.logout-button:hover{
+    background: white;
+    text-decoration: underline $black;
+}
+
 figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight: 500;}
 
 .picture-add {
@@ -63,8 +82,26 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
     clip: rect(1px, 1px, 1px, 1px);
 }
 
+.choose-file input {
+    border-width: .05rem;
+    color: black;
+    background: white;
+}
 .user-detail {
     padding-top: .5rem;
+}
+
+
+.comment-box {
+    border: solid;
+    padding: 1rem;
+    background: white;
+    color: $black;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+.comment-form {
+    padding-bottom: 1rem;
 }
 
 .div2 {
@@ -78,7 +115,7 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
 }
 
 .upload-button {
-    background: $red;
+    background: $black;
     color: white;
     border: none;
     border-radius: 2px;
@@ -88,11 +125,16 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
     transition: 0.3s ease all;
     cursor: pointer;
 }
+
+.preview {
+    width: 20%;
+}
 .upload-button:hover {
     background: #dd8080;
 }
 .user-form {
     text-align:center;
+    padding-bottom: 1rem;
 }
 
 .description-box {
@@ -113,7 +155,7 @@ a {
     text-decoration: none;
     transition: 0.3s ease all;
     padding: 0 0 3px;
-    color: $red;
+    color: $black;
 }
 
 a:hover {

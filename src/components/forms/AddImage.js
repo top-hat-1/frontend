@@ -25,14 +25,29 @@ class AddImage extends PureComponent {
     this.handleToggle();
 
     const { elements } = event.target;
+    
+    
 
-    this.handleUpload(elements.image.files[0])
+    this.handleImage(elements.image.files[0])
       .then(url => {
         this.props.onSubmit(url);
+        this.setState({ image: '' });
+        this.pictureInput.value = '';
       });
   };
 
-  handleUpload(file) {
+  handleUpload = ({ target }) => {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(target.files[0]);
+
+    reader.onload = () => {
+      this.setState({ image: reader.result });
+    };
+    
+  };
+
+  handleImage(file) {
     if(file.name){
       const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
       
@@ -48,6 +63,7 @@ class AddImage extends PureComponent {
     }
   }
 
+
   handleToggle = () => {
     this.setState(prev => ({
       share: !prev.share
@@ -55,23 +71,21 @@ class AddImage extends PureComponent {
   };
 
   render() {
-    // const { image, disable } = this.state;
+    const { image } = this.state;
 
     return (
 
       <form className="user-form" onSubmit={this.handleSubmit}>
+        <figure>
+          <img className="preview" src={image}/>
+        </figure>
  
         <div className="picture-add">
-          <input className="image-input"
-            ref={(input) => { this.pictureInput = input; }} 
-            type="file" 
-            name="image"  
-            style={{ display: 'none' }}/>
-          <input className="upload-button" type="button" value="Add Photo" onClick={() => this.pictureInput.click()}/>
-
-          {/* <figure>
-            <img className="preview" src={image}/>
-          </figure> */}
+          <label htmlFor="image"> Add Photo:
+            <div className="choose-file">
+              <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} required/>
+            </div>
+          </label>
         </div>
 
         <button className={'form-button'} type={'submit'}>Confirm Image</button>

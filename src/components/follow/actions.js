@@ -12,3 +12,14 @@ export function addToFollowing(followId, userId) {
       });
   };
 }
+
+// export function getFollowing(id) {
+//   return dispatch => {
+//     return apiFunctions.getfollowing(id)
+//       .then(id => {
+//         dispatch({
+//           type: 
+//         })
+//       })
+//   }
+// }

@@ -8,7 +8,8 @@ class AddCommentForm extends Component {
     userId: this.props.userId, 
     comment: '',
     target: this.props.projectId, 
-    projectId: this.props.projectId 
+    projectId: this.props.projectId,
+    name: this.props.name
   };
 
   handleSubmit = event => {
@@ -16,6 +17,7 @@ class AddCommentForm extends Component {
     this.props.addComment({
       ...this.state
     });
+    this.setState({ comment: '' });
   };
 
   handleChange = ({ target }) => {
@@ -44,7 +46,8 @@ class AddCommentForm extends Component {
 
 export default connect(
   state => ({
-    userId: state.auth._id
+    userId: state.auth._id,
+    name: state.auth.name
   }),
   { addComment }
 )(AddCommentForm);

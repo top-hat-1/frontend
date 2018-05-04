@@ -8,7 +8,7 @@ import { commentsLoad } from '../comments/actions';
 import { momentsLoad } from '../moments/actions';
 
 class ProjectDetail extends Component {
-
+  
   componentDidMount() {
     this.props.projectLoad(this.props.id);
     this.props.momentsLoad(this.props.id);
