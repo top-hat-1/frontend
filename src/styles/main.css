@@ -72,6 +72,10 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
     padding-top: .5rem;
 }
 
+.comment-form {
+    padding-bottom: 1rem;
+}
+
 .div2 {
     padding-bottom: 10rem;
 }
