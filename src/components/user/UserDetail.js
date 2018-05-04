@@ -10,18 +10,22 @@ import FollowButton from '../follow/FollowButton';
 class UserDetail extends Component {
 
   componentWillMount(){
-    if(localStorage.getItem('token')) {
-      let auth = {};
-      auth.name = localStorage.getItem('name');
-      auth._id = localStorage.getItem('_id');
-    }
     this.props.loadUser(this.props.userId);
     this.props.projectsLoad(this.props.userId);
+  }
+  
+  componentDidMount(){
+    this.props.projectsLoad(this.props.userId);
+    this.props.loadUser(this.props.userId).then(r => this.setState({ user: r }));
+    // this.props.loadUser(this.props.userId).then(r => this.setState({ user: r }));
   }
 
   render() {
 
-    if(this.props.userId !== this.props.projects[0].owner) return null;
+    if(!this.props.user) return null;
+
+    // if(!this.props.project) return null;
+    // if(this.props.userId !== this.props.projects[0].owner) return null;
 
     const { _id, name, hobbies, photo } = this.props.user;   
     const authUser = this.props.auth._id;    

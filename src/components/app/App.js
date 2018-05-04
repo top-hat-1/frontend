@@ -25,7 +25,6 @@ class App extends Component {
       auth = {};
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
-      this.props.loadUser(auth._id);
     }
     this.props.setUserToState(auth);
   }
