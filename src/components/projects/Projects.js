@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { projectsLoad } from './actions';
+import { projectLoad, projectsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Project from './Project';
 
@@ -38,5 +38,5 @@ export default connect(
     loading: state.loading,
     projects: state.projects,
   }),
-  { projectsLoad }
+  { projectsLoad, projectLoad }
 )(Projects);
