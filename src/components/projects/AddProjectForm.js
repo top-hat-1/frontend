@@ -20,6 +20,8 @@ class AddProjectForm extends Component {
       owner: this.props.owner._id,
       name: this.props.owner.name
     });
+    this.setState({ projectName: '' });
+    this.setState({ description: '' });
   };
   // TODO: clear fields... setState?
 
