@@ -30,7 +30,7 @@ class AddProjectForm extends Component {
   render() {
     const { projectName, description } = this.state;
     return (
-      <div>
+      <div className="div2">
         <AddImage/>
         <form className="add-project-form" onSubmit={this.handleSubmit}>
           <label htmlFor="projectName">

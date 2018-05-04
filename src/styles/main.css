@@ -55,6 +55,21 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
 }
+
+.user-detail {
+    padding-top: .5rem;
+}
+
+.div2 {
+    padding-bottom: 10rem;
+}
+
+.comments-ul {
+    list-style-type: none;
+    margin-right: 2.5rem;
+    padding-bottom: .5rem;
+}
+
 .upload-button {
     background: $red;
     color: white;
