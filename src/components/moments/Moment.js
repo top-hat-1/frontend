@@ -15,10 +15,10 @@ class Moment extends Component {
     return (
       <li className="moment-li">
         <div className="image-wrap">
-          <Link to={`/projects/${projectId}/moments/${_id}`}><img src={photoUrl}/></Link>
+          <Link to={`/moments/${_id}`}><img src={photoUrl}/></Link>
         </div>
         <div className="moment-details">
-        <Link to={`/projects/${projectId}/moments/${_id}`}><p>{caption}</p></Link>
+        <Link to={`/moments/${_id}`}><p>{caption}</p></Link>
         <small>{category}</small>
         </div>
       </li>

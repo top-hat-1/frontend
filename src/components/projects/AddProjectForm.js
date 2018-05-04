@@ -17,7 +17,8 @@ class AddProjectForm extends Component {
     this.props.addProject({
       ...this.state,
       coverPhotoUrl: this.props.image,
-      owner: this.props.owner._id
+      owner: this.props.owner._id,
+      name: this.props.owner.name
     });
   };
   // TODO: clear fields... setState?
@@ -29,28 +30,26 @@ class AddProjectForm extends Component {
   render() {
     const { projectName, description } = this.state;
     return (
-      <div>
-        <div>
-          <AddImage/>
-          <form className="add-project-form" onSubmit={this.handleSubmit}>
-            <label htmlFor="projectName">
-              <input 
-                name="projectName"
-                required 
-                placeholder={projectName ? { projectName } : 'Project Name'}
-                value={projectName}
-                onChange={this.handleChange}/>
-            </label>
-            <label htmlFor="description">
-              <input 
-                name="description" 
-                placeholder={description ? { description } : 'Description'}
-                value={description}
-                onChange={this.handleChange}/>
-            </label>
-            <button type="submit">Add Project</button>
-          </form>
-        </div>
+      <div className="div2">
+        <AddImage/>
+        <form className="add-project-form" onSubmit={this.handleSubmit}>
+          <label htmlFor="projectName">
+            <input className="project-placeholder"
+              name="projectName"
+              required 
+              placeholder={projectName ? { projectName } : 'Project Name'}
+              value={projectName}
+              onChange={this.handleChange}/>
+          </label>
+          <label htmlFor="description">
+            <input className="project-placeholder"
+              name="description" 
+              placeholder={description ? { description } : 'Short Description'}
+              value={description}
+              onChange={this.handleChange}/>
+          </label>
+          <button type="submit">Add Project</button>
+        </form>
       </div>
     );
   }

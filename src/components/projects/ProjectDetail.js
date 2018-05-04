@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { projectLoad } from './actions';
+import { Link } from 'react-router-dom';
 import Moments from '../moments/Moments';
 import Comments from '../comments/Comments';
 import { commentsLoad } from '../comments/actions';
@@ -30,7 +31,10 @@ class ProjectDetail extends Component {
       <div>
         <h4>{projectName}</h4>
         <div className="image-wrap"> 
-          <img src={coverPhotoUrl}></img>
+        {
+          project ? <Link to={`/user/${project.owner}/projects`}><h3>{project.name}</h3></Link> : null
+        }
+        <img src={coverPhotoUrl}></img>
         </div>
         <div className="project-details"> 
           <p className="description-box">{description}</p>

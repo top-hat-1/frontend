@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { projectLoad, projectsLoad } from './actions';
 import Loading from '../app/error-loading/Loading';
 import Project from './Project';
-import AddProjectForm from './AddProjectForm';
 
 class Projects extends Component {
 
@@ -18,12 +16,9 @@ class Projects extends Component {
   render() {
 
     const { projects } = this.props;
-    const { _id } = this.props.auth; // ONLY for testing link to user detail
 
     return (
       <Fragment>
-        <AddProjectForm/>
-        <Link to={`/user/${_id}/projects`}>LINK TO ME</Link>
         {projects && projects[0] ?
           <div>
             <h3 className="projects-title">Projects</h3>
@@ -42,7 +37,6 @@ export default connect(
   state => ({
     loading: state.loading,
     projects: state.projects,
-    auth: state.auth
   }),
   { projectsLoad, projectLoad }
 )(Projects);

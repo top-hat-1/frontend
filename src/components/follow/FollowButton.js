@@ -5,15 +5,15 @@ import { addToFollowing } from './actions';
 class FollowButton extends PureComponent {
 
   handleClick(){
-    followId = this.props;
-    userId = this.props;
-    this.props.addFollow(followId, userId)
+    const followId = this.props;
+    const userId = this.props;
+    this.props.addToFollowing(followId, userId);
   }
   render() {
 
-    return(
+    return (
       <button onClick={this.handleClick}>Follow</button>
-    )
+    );
   }
 }
 

@@ -8,9 +8,9 @@ import Signup from '../forms/Signup';
 import Signin from '../forms/Signin';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import Navbar from '../nav/Navbar';
 import UserDetail from '../user/UserDetail';
 import EditUser from '../user/EditUser';
+import Following from '../follow/Following';
 import { setUserToState, loadUser } from './actions';
 
 
@@ -25,7 +25,7 @@ class App extends Component {
       auth = {};
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
-      // this.props.loadUser(auth._id);
+      this.props.loadUser(auth._id);
     }
     this.props.setUserToState(auth);
   }
@@ -36,17 +36,17 @@ class App extends Component {
       <Router>
         <div id="container">
           <Header/>
-          <Navbar/>
           <main id="main" role="main">
             <Switch>
-              {/* <Route exact path="/" component={Home}/> */}
-              <Route exact path="/projects/:projectId/moments/:id" render ={({ match }) => <MomentDetail id={match.params.id}/>} />
+              <Route exact path="/moments/:id" render ={({ match }) => <MomentDetail id={match.params.id}/>} />
               <Route exact path="/projects/:id" render={({ match }) => <ProjectDetail id={match.params.id}/>} />
               <Route exact path="/projects" component={Projects}/>
               <Route exact path="/auth/signup" component={Signup}/>
               <Route exact path="/auth/signin" component={Signin}/>
               <Route exact path="/user/:id/projects" render={({ match }) => <UserDetail userId={match.params.id}/>} /> 
+              <Route exact path="/user" component={UserDetail}/>
               <Route exact path="/edituser" component={EditUser}/>
+              <Route exact path="/following" component={Following}/>
               <Redirect to="/projects"/>
             </Switch>
           </main>

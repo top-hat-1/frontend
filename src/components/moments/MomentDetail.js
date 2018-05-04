@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { momentLoad } from './actions';
 
 class MomentDetail extends Component {
 
+  componentWillMount() {
+    this.props.momentLoad(this.props.id);
+  }
+
   render() {
 
-    const { id, moments, projectName } = this.props;
-
-    const result = moments.find(element => {
-      return element._id === id;
-    });
-
-    const { photoUrl, caption, category } = result;
+    const { photoUrl, category, caption } = this.props.moment;
+    const { name } = this.props.project;
 
     return (
       <div>
-        <h4>{projectName}</h4>
+        <h4>{name}</h4>
         <div className="image-wrap"> 
           <img src={photoUrl}></img>
         </div>
@@ -31,8 +31,8 @@ class MomentDetail extends Component {
 export default connect(
   state => ({
     owner: state.owner,
-    moments: state.project.moments,
-    projectName: state.project.projectName
+    moment: state.moment,
+    project: state.project,
   }),
-  null
+  { momentLoad }
 )(MomentDetail);

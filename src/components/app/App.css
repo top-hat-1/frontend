@@ -1,5 +1,33 @@
 @import '../../styles/variables.css';
 
+button {
+    background: $red;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.5rem;
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+    transition: 0.3s ease all;
+    cursor: pointer;
+}
+
+.project-placeholder {
+    text-align: center;
+    color: $red;
+}
+.add-project-form {
+    border: 3px solid rgb(202, 202, 202);
+    padding: .5rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    font-size: 90%;
+    background: white;
+}
+button:hover {
+    background: #dd8080;
+}
+
 .app {
   min-height: 100vh;
   display: grid;
@@ -8,6 +36,11 @@
   "content"
   "footer";
   grid-template-rows: auto 1fr auto;
+}
+
+.projects-ul {
+    list-style: none;
+    padding-left: 0;
 }
 
 .no-line1 {
@@ -19,18 +52,6 @@
   margin: 0 auto;
   width: 100%;
   animation: pageSlide 1s ease-out;
-}
-
-.form-submit {
-    color: white;
-}
-
-.sign-up {
-    padding: 1rem;
-}
-
-.sign-in {
-    padding: 1rem;
 }
 
 @keyframes pageSlide {
@@ -45,68 +66,69 @@
 }
 
 #header {
-  grid-area: header;
-  padding: 1rem;
-  text-align: center;
-  position: relative;
-  list-style: none;
+    grid-area: header;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    list-style: none;
 }
 
 #main {
-  grid-area: content;
-  text-align: center;
-  background-image: linear-gradient(90deg, #5388b3 100%, #8f9ece 0%);
-  background-size: cover;
-  list-style: none;
+
+    grid-area: content;
+    text-align: center;
+    background-image: linear-gradient(90deg, #5388b3 100%, #8f9ece 0%);
+    background-size: cover;
+    list-style: none;
+    color: white;
 }
 
 #footer {
-  grid-area: footer;
-  padding: 1.5rem;
-  text-align: center;
+    grid-area: footer;
+    padding: 1.5rem;
+    text-align: center;
+    color: $red;
 }
 
 .head-container {
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
   
   li {
     list-style-type: none;
     padding: 0 0 0 1rem;
 
     a {
-      text-decoration: none;
-      color: $black;
-      transition: 0.3s ease all;
-      padding: 0 0 3px;
-      border-bottom: 3px solid $white;
+        text-decoration: none;
+        color: $black;
+        transition: 0.3s ease all;
+        padding: 0 0 3px;
+        border-bottom: 3px solid $white;
     }
     
     a:hover {
-      color: $black;
-      border-bottom: 3px solid $red;
+        color: $black;
+        border-bottom: 3px solid $red;
     }
   }
 }
-
+.header {
+    padding: 1rem;
+}
 .flex-li {
-  display: flex;
+    display: flex;
 }
 
 .main-container {
-  text-align: left;
-  padding: 2rem 0;
+    text-align: left;
+    padding: 2rem 0;
 }
 
 .footer {
-  text-align: left;
-  color: $gray;
-
-  a {
-    border-bottom: 3px solid $white;
-  }
+    text-align: left;
+    color: $gray;
   
   a:hover {
     border-bottom: 3px solid $red;
@@ -124,7 +146,7 @@
   .logo {
     font-size: 1.3rem;
     padding: 7px 0 0;
-    color: $black;
+    color: $red;
   }
 
   .no-line {
@@ -157,8 +179,8 @@
   }
 
   .logo {
-    font-size: 2rem;
-    transition: 0.3s ease all;
+    font-size: 3rem;
+    transition: 0.8s ease all;
 
     &:hover {
       color: $gray;
@@ -169,13 +191,5 @@
     display: flex;
     justify-content: space-between;
     font-size: 1rem;
-  }
-
-  .nav-ul{
-    display: flex;
-  }
-
-  .checkbox {
-    display: none;
   }
 }
