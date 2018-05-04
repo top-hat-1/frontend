@@ -88,6 +88,10 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
     transition: 0.3s ease all;
     cursor: pointer;
 }
+
+.preview {
+    width: 20%;
+}
 .upload-button:hover {
     background: #dd8080;
 }
