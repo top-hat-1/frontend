@@ -17,6 +17,7 @@ class AddCommentForm extends Component {
     this.props.addComment({
       ...this.state
     });
+    this.setState({ comment: '' });
   };
 
   handleChange = ({ target }) => {
