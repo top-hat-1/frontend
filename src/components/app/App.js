@@ -29,8 +29,8 @@ class App extends Component {
     }
     this.props.setUserToState(auth);
   }
-
-  render() {
+  
+  render() {    
 
     return (
       <Router>
@@ -60,7 +60,8 @@ class App extends Component {
 export default connect(
   state => ({ 
     loading: state.loading,
-    error: state.error
+    error: state.error,
+    state: state
   }),
   { setUserToState, loadUser }
 )(App);
