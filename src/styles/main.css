@@ -6,7 +6,7 @@ html {height: 100%;}
 body {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
-    color: $red;
+    color: $black;
     min-height: 100%;
     margin: 0;
     text-align: center;
@@ -17,7 +17,7 @@ h1, h2, h3, h4 {
     line-height: 1.1;
     letter-spacing: 3px;
     padding: 0 0 0rem 0;
-    color: $red;
+    color: $black;
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
 }
@@ -58,7 +58,7 @@ button.logout-button {
     transition: 0.3s ease all;
     padding: 0 0 3px;
     font-family: 'Nunito', sans-serif;
-    color: $red;
+    color: $black;
     min-height: 100%;
     margin: 0;
     text-align: center;
@@ -79,14 +79,19 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
 }
 
 .choose-file input {
-    border-style: solid;
-    border-color: white;
     border-width: .05rem;
+    color: black;
+    background: white;
 }
 .user-detail {
     padding-top: .5rem;
 }
-
+.comment-box {
+    border: solid;
+    padding: 1rem;
+    background: white;
+    color: $black;
+}
 .comment-form {
     padding-bottom: 1rem;
 }
@@ -102,7 +107,7 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
 }
 
 .upload-button {
-    background: $red;
+    background: $black;
     color: white;
     border: none;
     border-radius: 2px;
@@ -141,7 +146,7 @@ a {
     text-decoration: none;
     transition: 0.3s ease all;
     padding: 0 0 3px;
-    color: $red;
+    color: $black;
 }
 
 a:hover {
