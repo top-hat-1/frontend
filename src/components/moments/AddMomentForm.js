@@ -18,6 +18,8 @@ class AddMomentForm extends Component {
       ...this.state,
       photoUrl: this.props.image
     });
+    this.setState({ category: '' });
+    this.setState({ caption: '' });
   };
 
   handleChange = ({ target }) => {
