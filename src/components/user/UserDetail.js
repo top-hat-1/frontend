@@ -35,7 +35,7 @@ class UserDetail extends Component {
           {authUser !== _id 
             ?
             <div className="follow-button-container">
-              <FollowButton userId={authUser} followId={_id}/>
+              <FollowButton followId={_id} userId={authUser}/>
             </div>
             : 
             <Fragment>
