@@ -6,7 +6,7 @@ html {height: 100%;}
 body {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
-    color: $black;
+    color: $red;
     min-height: 100%;
     margin: 0;
     text-align: center;
@@ -58,7 +58,7 @@ button.logout-button {
     transition: 0.3s ease all;
     padding: 0 0 3px;
     font-family: 'Nunito', sans-serif;
-    color: $black;
+    color: $red;
     min-height: 100%;
     margin: 0;
     text-align: center;
