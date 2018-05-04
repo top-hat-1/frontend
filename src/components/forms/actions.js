@@ -17,20 +17,22 @@ export const updateUser = (url, id) => {
 };
 
 export const signUp = data => (
-  localStorage.getItem('token') ? null : apiFunctions.signup(data).then(r => localStorage.setItem('token', r.token)),
-  localStorage.getItem('name') ? null : apiFunctions.signup(data).then(r => localStorage.setItem('name', r.name)),
-  localStorage.getItem('_id') ? null : apiFunctions.signup(data).then(r => localStorage.setItem('_id', r._id)),
-  // ADD COMMENTS, FOLLOWS, ETC
+  localStorage.getItem('token') ? null : apiFunctions.signup(data).then(r => {
+    localStorage.setItem('token', r.token);
+    localStorage.setItem('name', r.name);
+    localStorage.setItem('_id', r._id);
+  }),
   {
     type: SIGN_UP,
     payload: apiFunctions.signup(data)
   });
 
 export const signIn = data => (
-  localStorage.getItem('token') ? null : apiFunctions.signin(data).then(r => localStorage.setItem('token', r.token)),
-  localStorage.getItem('name') ? null : apiFunctions.signin(data).then(r => localStorage.setItem('name', r.name)),
-  localStorage.getItem('_id') ? null : apiFunctions.signin(data).then(r => localStorage.setItem('_id', r._id)),
-  // ADD COMMENTS, FOLLOWS, ETC
+  localStorage.getItem('token') ? null : apiFunctions.signin(data).then(r => {
+    localStorage.setItem('token', r.token);
+    localStorage.setItem('name', r.name);
+    localStorage.setItem('_id', r._id);
+  }),
   {
     type: SIGN_IN,
     payload: apiFunctions.signin(data)
