@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadUser } from '../app/actions';
+import { projectsLoad } from '../projects/actions';
 import Projects from '../projects/Projects';
 import AddProjectForm from '../projects/AddProjectForm';
 import FollowButton from '../follow/FollowButton';
@@ -15,7 +16,8 @@ class UserDetail extends Component {
       let auth = {};
       auth.name = localStorage.getItem('name');
       auth._id = localStorage.getItem('_id');
-      this.props.loadUser(this.props.userId.userId);
+      this.props.loadUser(this.props.userId);
+      this.props.projectsLoad(this.props.userId);
     }
   }
 
@@ -55,10 +57,9 @@ class UserDetail extends Component {
 }
 
 export default connect(
-  (state, ownProps) => ({
+  state => ({
     state: state,
-    userId: ownProps,
     user: state.user
   }),
-  { loadUser }
+  { loadUser, projectsLoad }
 )(UserDetail);

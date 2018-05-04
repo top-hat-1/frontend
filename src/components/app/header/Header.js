@@ -33,8 +33,8 @@ class Header extends Component {
                     state.auth
                       ? <div>
                         <li><button onClick={this.handleLogOut}>Log out</button></li>
-                        <li><Link to={'/user'}>My Profile</Link></li>
-                        <li><Link to={'#'}>My Projects</Link></li>
+                        <li><Link to={`/user/${state.auth._id}/projects`}>My Profile</Link></li>
+                        <li><Link to={'/following'}>Friends</Link></li>
                       </div>
                       :
                       <Fragment>
@@ -57,7 +57,7 @@ class Header extends Component {
 
 export default connect(
   state => ({
-    state: state
+    state: state,
   }),
   { signOut }
 )(Header);
