@@ -63,34 +63,6 @@ class AddImage extends PureComponent {
     }
   }
 
-  // handleSubmit = event => {
-  //   event.preventDefault();
-
-  //   this.handleToggle();
-
-  //   const { elements } = event.target;
-
-  //   this.handleUpload(elements.image.files[0])
-  //     .then(url => {
-  //       this.props.onSubmit(url);
-  //     });
-  // };
-
-  // handleUpload(file) {
-  //   if(file.name){
-  //     const uploadTask = completeImages.child(db.ref('temp').push().key).put(file);
-      
-  //     return new Promise((resolve, reject) => {
-  //       uploadTask.on('state_changed', () => {   
-  //       },
-  //       reject,
-  //       () => {
-  //         const downloadUrl = uploadTask.snapshot.downloadURL;
-  //         resolve(downloadUrl);
-  //       });
-  //     });
-  //   }
-  // }
 
   handleToggle = () => {
     this.setState(prev => ({
@@ -114,16 +86,6 @@ class AddImage extends PureComponent {
             <input ref={(input) => { this.pictureInput = input; }} type="file" name="image" onChange={this.handleUpload} required/>
 
           </label>
-          {/* <input className="image-input"
-            ref={(input) => { this.pictureInput = input; }} 
-            type="file" 
-            name="image"  
-            style={{ display: 'none' }}/>
-          <input className="upload-button" type="button" value="Add Photo" onClick={() => this.pictureInput.click()}/> */}
-
-          {/* <figure>
-            <img className="preview" src={image}/>
-          </figure> */}
         </div>
 
         <button className={'form-button'} type={'submit'}>Confirm Image</button>
