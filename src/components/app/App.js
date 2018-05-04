@@ -10,6 +10,7 @@ import Header from './header/Header';
 import Footer from './footer/Footer';
 import UserDetail from '../user/UserDetail';
 import EditUser from '../user/EditUser';
+import Following from '../follow/Following';
 import { setUserToState, loadUser } from './actions';
 
 
@@ -45,7 +46,8 @@ class App extends Component {
               <Route exact path="/auth/signin" component={Signin}/>
               <Route exact path="/user/:id/projects" render={({ match }) => <UserDetail userId={match.params.id}/>} /> 
               <Route exact path="/user" component={UserDetail}/>
-              <Route exact path="/edituser" component={EditUser}/>>
+              <Route exact path="/edituser" component={EditUser}/>
+              <Route exact path="/following" component={Following}/>
               <Redirect to="/projects"/>
             </Switch>
           </main>
