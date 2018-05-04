@@ -35,7 +35,7 @@ class AddMomentForm extends Component {
     const { caption } = this.state; 
 
     return (
-      <div>
+      <div className="secret-div">
         <h3>Add a Moment</h3>
         <AddImage/>
         <form className="add-moment-form" onSubmit={this.handleSubmit}>
