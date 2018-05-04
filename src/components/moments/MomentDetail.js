@@ -10,14 +10,14 @@ class MomentDetail extends Component {
 
   render() {
 
-    const { photo, category, caption } = this.props.moment;
+    const { photoUrl, category, caption } = this.props.moment;
     const { name } = this.props.project;
 
     return (
       <div>
         <h4>{name}</h4>
         <div className="image-wrap"> 
-          <img src={photo}></img>
+          <img src={photoUrl}></img>
         </div>
         <div className="moment-details">
           <small>{category}</small>
