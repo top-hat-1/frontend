@@ -1,20 +1,21 @@
 @import '../../styles/variables.css';
 
 button {
-    background: $red;
+    background: $black;
     color: white;
     border: none;
     border-radius: 2px;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     font-weight: 600;
     padding: 0.5rem 0.7rem;
     transition: 0.3s ease all;
     cursor: pointer;
+    letter-spacing: .1rem
 }
 
 .project-placeholder {
     text-align: center;
-    color: $red;
+    color: $black;
 }
 .add-project-form {
     border: 3px solid rgb(202, 202, 202);
@@ -87,7 +88,7 @@ button:hover {
     grid-area: footer;
     padding: 1.5rem;
     text-align: center;
-    color: $red;
+    color: $black;
 }
 
 .head-container {
@@ -110,7 +111,7 @@ button:hover {
     
     a:hover {
         color: $black;
-        border-bottom: 3px solid $red;
+        text-decoration: underline;
     }
   }
 }
@@ -131,7 +132,7 @@ button:hover {
     color: $gray;
   
   a:hover {
-    border-bottom: 3px solid $red;
+    text-decoration: underline;
   }
 }
 
@@ -146,7 +147,7 @@ button:hover {
   .logo {
     font-size: 1.3rem;
     padding: 7px 0 0;
-    color: $red;
+    color: $black;
   }
 
   .no-line {
