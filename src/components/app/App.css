@@ -96,6 +96,7 @@ button:hover {
     justify-content: space-between;
     text-align: left;
     align-items: center;
+    letter-spacing: .1rem;
   
   li {
     list-style-type: none;

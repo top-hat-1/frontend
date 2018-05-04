@@ -97,6 +97,8 @@ figcaption, small, .font_small {font-size: 0.8em; padding: 0 0 2rem; font-weight
     padding: 1rem;
     background: white;
     color: $black;
+    margin-right: 15%;
+    margin-left: 15%;
 }
 .comment-form {
     padding-bottom: 1rem;
