@@ -34,8 +34,15 @@ h2 {
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 3.5em;
     color: white;
+    padding-top: 2rem;
+    letter-spacing: .3rem;
+    width: fit-content;
+    margin: auto;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid white;
 }
 
 h4 {
