@@ -24,7 +24,10 @@ class UserDetail extends Component {
     if(!this.props.user) return null;
 
     const { _id, name, hobbies, photo } = this.props.user;   
-    const authUser = this.props.auth._id;    
+    let authUser = null;
+    if(this.props.auth) {
+      authUser = this.props.auth._id;    
+    }
 
     return (
 
