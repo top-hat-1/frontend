@@ -25,7 +25,7 @@ class Comments extends Component {
         {comments && comments[0] ?
           <div>
             <ul className="comments-ul">
-              {comments.map((comment, index) => <Comment key={index} {...comment}/>)}
+              {comments.reverse().map((comment, index) => <Comment key={index} {...comment}/>)}
             </ul>
           </div>
           : <Loading/>

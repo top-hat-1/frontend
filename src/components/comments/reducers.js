@@ -9,7 +9,7 @@ export function comments(state = [], { type, payload }) {
       return payload;
 
     case COMMENT_ADD:
-      return [...state, payload];
+      return [...state, payload].reverse();
     
     case COMMENT_REMOVE:
       return state.filter(m => m._id !== payload);
