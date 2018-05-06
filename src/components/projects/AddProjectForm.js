@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { addProject } from './actions';
 import AddImage from '../forms/AddImage';
 
-//TODO: completed button for marking as finished.... the rest of the data for a project
-
 class AddProjectForm extends Component {
 
     state = {
@@ -23,8 +21,6 @@ class AddProjectForm extends Component {
     this.setState({ projectName: '' });
     this.setState({ description: '' });
   };
-  // TODO: clear fields... setState?
-
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
