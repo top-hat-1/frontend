@@ -19,6 +19,13 @@ class UserDetail extends Component {
     this.props.loadUser(this.props.userId).then(r => this.setState({ user: r }));
   }
 
+  componentDidUpdate(){
+    if(this.props.user._id !== this.props.userId){
+      this.props.loadUser(this.props.userId);
+      this.props.projectsLoad(this.props.userId);
+    }
+  }
+
   render() {
 
     if(!this.props.user) return null;

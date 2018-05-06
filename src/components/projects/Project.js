@@ -23,9 +23,6 @@ class Project extends Component {
   }
 }
 
-//TODO: conditional to check for user and give option of commenting
-// check if this is the current user's project, give option of deleting or editing the project -- call a component that opens the project in a form and has a remove button. 
-
 export default connect(
   state => ({
     user: state.user,

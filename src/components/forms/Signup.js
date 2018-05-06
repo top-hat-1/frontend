@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { signUp } from './actions';
+import Error from '../app/error-loading/Error';
 
 class Signup extends PureComponent {
 
@@ -23,8 +24,19 @@ class Signup extends PureComponent {
   };
 
   render() {
+
+    const { error } = this.props;
+
     return (
+
       <section className='form-submit'>
+
+        {
+          error ?
+            <Error/>
+            : null
+        }
+
         <h4>Sign up</h4>
         <form onSubmit={this.handleSubmit}>
 
@@ -64,6 +76,6 @@ class Signup extends PureComponent {
 }
 
 export default withRouter(connect(
-  ({ auth }) => ({ auth }),
+  ({ auth, error }) => ({ auth, error }),
   { signUp }
 )(Signup));

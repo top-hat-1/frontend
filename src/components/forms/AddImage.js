@@ -5,8 +5,6 @@ import { storage, db } from '../../services/firebase';
 
 const completeImages = storage.ref('images');
 
-// TODO: add conditional to check where we are and change the label on line 65 -- add profile, add cover, add photo
-
 class AddImage extends PureComponent {
 
   state = {

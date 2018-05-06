@@ -37,8 +37,6 @@ export function moment(state = [], { type, payload }) {
     case MOMENT_REMOVE:
       return null;
     
-    // TODO moment update?? STRETCH
-
     default:
       return state;
   }
