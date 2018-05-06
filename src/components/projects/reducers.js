@@ -3,6 +3,7 @@ export const PROJECT_LOAD = 'PROJECT_LOAD';
 export const PROJECT_ADD = 'PROJECT_ADD';
 export const PROJECT_REMOVE = 'PROJECT_REMOVE';
 export const PROJECT_UPDATE = 'PROJECT_UPDATE';
+import unshiftProject from './unshift';
 
 
 export function projects(state = [], { type, payload }) {
@@ -12,7 +13,7 @@ export function projects(state = [], { type, payload }) {
       return payload;
 
     case PROJECT_ADD:
-      return [...state, payload];
+      return unshiftProject(state, payload);
   
     case PROJECT_REMOVE: 
       return state.filter(p => p._id !== payload);

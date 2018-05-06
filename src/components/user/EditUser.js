@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { addAvi, updateUser } from '../forms/actions';
 import { storage, db } from '../../services/firebase';
 import apiFunctions from '../../services/projectsApi';
@@ -26,13 +27,15 @@ class EditUser extends PureComponent {
     const { target: { elements } } = event;
     const { hobbies } = elements;
 
-    const { state } = this.props;
+    const { state, history } = this.props;
     const id = state.auth._id;
 
     this.handleUpload(elements.image.files[0])
       .then(url => {
         apiFunctions.updateuser(url, hobbies.value, id);
-      });
+      })
+      .then(() => apiFunctions.loaduser(id))
+      .then(() => history.push(`/user/${id}/projects`));
   };
 
   handleUpload(file) {
@@ -86,7 +89,7 @@ class EditUser extends PureComponent {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   (state) => ({ state: state }),
   { onSubmit: addAvi, updateUser: updateUser }
-)(EditUser);
+)(EditUser));
