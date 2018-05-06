@@ -12,7 +12,6 @@ class Following extends PureComponent {
   render() {
 
     const { following } = this.props;
-    // const following = [[{ projectName: 'test-one', description: 'test-one' }, { projectName: 'test-two', description: 'test-two' }], [{ projectName: 'test-one', description: 'test-two' }, { projectName: 'test-three', description: 'test-three' }, { projectName: 'test-four', description: 'test-four' }]];
     const projectsArray = [].concat.apply([], following);
 
     return (
@@ -28,5 +27,4 @@ class Following extends PureComponent {
 export default connect(
   state => ({ auth: state.auth, following: state.following }),
   { getFollowing }
-  // null
 )(Following);

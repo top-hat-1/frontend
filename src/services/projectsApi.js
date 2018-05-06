@@ -67,7 +67,7 @@ function sendMomentUpdate(moment) {
   }).then(r => r.json()); 
 }
 
-function sendMomentRemove(momentId) { // TODO: Will need to send the whole object OR owner... investigate
+function sendMomentRemove(momentId) { 
   return fetch(`${URL}/moments/${momentId}`, {
     method: 'DELETE'
   }).then(r => r.json());
@@ -151,9 +151,6 @@ function loaduser(id) {
     headers
   }).then(r => r.json());
 }
-
-// TODO: addComment, removeComment, 
-// Check these requests/routes... can we add auth information into the header, do we need additional information in the body for some of these? 
 
 export default {
   addFollow,

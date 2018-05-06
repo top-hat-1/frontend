@@ -18,7 +18,7 @@ export function projects(state = [], { type, payload }) {
       return state.filter(p => p._id !== payload);
 
     case PROJECT_UPDATE: {
-      const index = state.findIndex(p => p._id === payload._id); // id vs. _id??
+      const index = state.findIndex(p => p._id === payload._id);
       return [
         ...state.slice(0, index),
         { ...state[index], ...payload },
@@ -35,11 +35,6 @@ export function project(state = null, { type, payload }) {
 
     case PROJECT_LOAD:
       return payload;
-
-    // case PROJECT_REMOVE:
-    //   return null;
-    
-    // TODO project update??
 
     default:
       return state;

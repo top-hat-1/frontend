@@ -7,10 +7,10 @@ import Project from './Project';
 class Projects extends Component {
 
   componentDidMount() {
-    this.props.userId ?  // did a userId get passed as a prop on this? 
-      this.props.projectsLoad(this.props.userId) // then load that user's projects.... link in nav bar to users/:id/projects, call Projects component w/ userId=match params
+    this.props.userId ?  
+      this.props.projectsLoad(this.props.userId) 
       :
-      this.props.projectsLoad(); // else call without user id if we're not looking for a specific user
+      this.props.projectsLoad();
   }
 
   render() {
@@ -23,7 +23,7 @@ class Projects extends Component {
           <div>
             <h3 className="projects-title">Projects</h3>
             <ul className="projects-ul">
-              {projects.map((project, index) => <Project key={index} {...project}/>)}
+              {projects.reverse().map((project, index) => <Project key={index} {...project}/>)}
             </ul>
           </div>
           : <Loading/>

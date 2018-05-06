@@ -17,18 +17,24 @@ class UserDetail extends Component {
   componentDidMount(){
     this.props.projectsLoad(this.props.userId);
     this.props.loadUser(this.props.userId).then(r => this.setState({ user: r }));
-    // this.props.loadUser(this.props.userId).then(r => this.setState({ user: r }));
+  }
+
+  componentDidUpdate(){
+    if(this.props.user._id !== this.props.userId){
+      this.props.loadUser(this.props.userId);
+      this.props.projectsLoad(this.props.userId);
+    }
   }
 
   render() {
 
     if(!this.props.user) return null;
 
-    // if(!this.props.project) return null;
-    // if(this.props.userId !== this.props.projects[0].owner) return null;
-
     const { _id, name, hobbies, photo } = this.props.user;   
-    const authUser = this.props.auth._id;    
+    let authUser = null;
+    if(this.props.auth) {
+      authUser = this.props.auth._id;    
+    }
 
     return (
 
@@ -37,23 +43,25 @@ class UserDetail extends Component {
           <h2>{name}</h2>
           <img className="user-photo" src={photo}/>
           <p className="hobby-box">{hobbies}</p>
-          {authUser !== _id 
-            ?
-            <div className="follow-button-container">
-              <FollowButton followId={_id} userId={authUser}/>
-            </div>
-            : 
-            <Fragment>
-              <div className="edit-profile-button">
-                <Link to="/edituser">✎</Link>
+          { authUser ?
+            (authUser !== _id ?
+              <div className="follow-button-container">
+                <FollowButton followId={_id} userId={authUser}/>
               </div>
-              <div className="add-project-container">
-                <AddProjectForm/>
+              : 
+              <div>
+                <div className="edit-profile-button">
+                  <Link to="/edituser">✎</Link>
+                </div>
+                <div className="add-project-container">
+                  <AddProjectForm/>
+                </div>
               </div>
-            </Fragment>
+            )
+            : null
           }
+          <Projects userId={_id}/>
         </div>
-        <Projects userId={_id}/>
       </Fragment>
     );
   }
