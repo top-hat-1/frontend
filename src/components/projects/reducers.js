@@ -12,7 +12,7 @@ export function projects(state = [], { type, payload }) {
       return payload;
 
     case PROJECT_ADD:
-      return [...state, payload];
+      return [...state, payload].reverse();
   
     case PROJECT_REMOVE: 
       return state.filter(p => p._id !== payload);
