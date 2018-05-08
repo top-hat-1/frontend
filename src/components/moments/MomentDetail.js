@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { momentLoad } from './actions';
 
 class MomentDetail extends Component {
@@ -11,11 +12,12 @@ class MomentDetail extends Component {
   render() {
 
     const { photoUrl, category, caption } = this.props.moment;
-    const { name } = this.props.project;
+    const { name, owner, projectName } = this.props.project;
 
     return (
       <div>
-        <h4>{name}</h4>
+        <h3>{projectName}</h3>
+        <Link to={`/user/${owner}/projects`}><h4>By {name}</h4></Link>
         <div className="image-wrap"> 
           <img src={photoUrl}></img>
         </div>

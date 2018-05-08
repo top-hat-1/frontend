@@ -32,7 +32,7 @@ class ProjectDetail extends Component {
         <h4>{projectName}</h4>
         <div className="image-wrap"> 
         {
-          project ? <Link to={`/user/${project.owner}/projects`}><h3>{project.name}</h3></Link> : null
+          project ? <Link to={`/user/${project.owner}/projects`}><h3>By {project.name}</h3></Link> : null
         }
         <img src={coverPhotoUrl}></img>
         </div>
