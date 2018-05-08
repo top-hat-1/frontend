@@ -21,7 +21,7 @@ describe('loading reducer', () => {
 
 describe('error reducers', () => {
 
-  it('intiial state', () => {
+  it('initial state', () => {
     const state = error(undefined, {});
     expect(state).toBeNull();
   });

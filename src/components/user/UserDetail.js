@@ -20,7 +20,7 @@ class UserDetail extends Component {
   }
 
   componentDidUpdate(){
-    if(this.props.user._id !== this.props.userId){
+    if(this.props.user && this.props.user._id !== this.props.userId){
       this.props.loadUser(this.props.userId);
       this.props.projectsLoad(this.props.userId);
     }
