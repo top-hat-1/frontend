@@ -13,6 +13,10 @@ button {
     letter-spacing: .1rem
 }
 
+li {
+  list-style-type: none
+}
+
 .project-placeholder {
     text-align: center;
     color: $black;
