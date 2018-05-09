@@ -8,6 +8,10 @@ class MomentDetail extends Component {
   componentWillMount() {
     this.props.momentLoad(this.props.id);
   }
+  
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
 
   render() {
 
