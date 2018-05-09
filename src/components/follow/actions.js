@@ -1,4 +1,4 @@
-import { FOLLOW_ADD } from './reducers';
+import { FOLLOW_ADD, FOLLOW_LOAD } from './reducers';
 import apiFunctions from '../../services/projectsApi';
 
 export function addToFollowing(followId, userId) {
@@ -13,13 +13,14 @@ export function addToFollowing(followId, userId) {
   };
 }
 
-// export function getFollowing(id) {
-//   return dispatch => {
-//     return apiFunctions.getfollowing(id)
-//       .then(id => {
-//         dispatch({
-//           type: 
-//         })
-//       })
-//   }
-// }
+export function getFollowing(id) {
+  return dispatch => {
+    return apiFunctions.getfollowing(id)
+      .then(projects => {
+        dispatch({
+          type: FOLLOW_LOAD,
+          payload: projects
+        });
+      });
+  };
+}

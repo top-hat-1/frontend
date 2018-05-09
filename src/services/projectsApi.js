@@ -51,7 +51,7 @@ function loadMoment(id) {
   }).then(r => r.json());
 }
 
-function sendMoment(moment){
+function sendMoment(moment) {
   return fetch(`${URL}/moments`, {
     method: 'POST',
     body: JSON.stringify(moment),
@@ -135,12 +135,19 @@ function updateuser(image, hobbies, id) {
   }).then(r => r.json());
 }
     
-function addFollow(followId, userId){
+function addFollow(followId, userId) {
   let toFollow = {};
   toFollow['_id'] = followId;
   return fetch(`${URL}/users/${userId}/following`, {
     method: 'POST',
     body: JSON.stringify(toFollow),
+    headers
+  }).then(r => r.json());
+}
+
+function getfollowing(id) {
+  return fetch(`${URL}/users/${id}/following`, {
+    method: 'GET',
     headers
   }).then(r => r.json());
 }
@@ -153,7 +160,6 @@ function loaduser(id) {
 }
 
 export default {
-  addFollow,
   loadProjects,
   loadProject,
   sendProject,
@@ -170,5 +176,7 @@ export default {
   signup,
   signin,
   updateuser,
+  addFollow,
+  getfollowing,
   loaduser
 };

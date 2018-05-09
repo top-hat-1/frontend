@@ -1,4 +1,5 @@
 export const FOLLOW_ADD = 'FOLLOW_ADD';
+export const FOLLOW_LOAD = 'FOLLOW_LOAD';
 
 export function following(state = [], { type, payload }) {
   switch(type) {
@@ -6,6 +7,8 @@ export function following(state = [], { type, payload }) {
       return [
         payload
       ];
+    case FOLLOW_LOAD:
+      return payload;
     default:
       return state;
   }
