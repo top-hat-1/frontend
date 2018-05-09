@@ -13,6 +13,7 @@ class ProjectDetail extends Component {
     this.props.projectLoad(this.props.id);
     this.props.momentsLoad(this.props.id);
     this.props.commentsLoad(this.props.id);
+    window.scrollTo(0, 0);
   }
   
   render() {
