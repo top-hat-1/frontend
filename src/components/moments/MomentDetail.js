@@ -12,11 +12,11 @@ class MomentDetail extends Component {
   render() {
 
     const { photoUrl, category, caption } = this.props.moment;
-    const { name, owner, projectName } = this.props.project;
+    const { name, owner, projectName, _id } = this.props.project;
 
     return (
       <div>
-        <h3>{projectName}</h3>
+        <Link to={`/projects/${_id}`}><h3>{projectName}</h3></Link>
         <Link to={`/user/${owner}/projects`}><h4>By {name}</h4></Link>
         <div className="image-wrap"> 
           <img src={photoUrl}></img>
