@@ -7,7 +7,7 @@ class Following extends PureComponent {
 
   componentDidMount(){
     const { _id } = this.props.auth;
-    this.props.getFollowing(_id);
+    this.props.getFollowing(_id);   // error: this is not a function
   }
 
   render() {
