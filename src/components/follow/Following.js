@@ -7,14 +7,17 @@ import Project from '../projects/Project';
 class Following extends PureComponent {
 
   componentDidMount(){
-    const { _id } = this.props.auth;
-    this.props.getFollowing(_id);   // need to handle no following
+    const { id } = this.props;
+    this.props.getFollowing(id);   
   }
 
   render() {
 
     const { following } = this.props;
-    const projectsArray = [].concat.apply([], following);
+    let projectsArray = [].concat.apply([], following);
+    projectsArray = projectsArray.sort((a, b) => {
+      return new Date(a.dateAdded) - new Date(b.dateAdded);
+    }).reverse();
 
     return (
       <div className="Following list">
@@ -25,7 +28,7 @@ class Following extends PureComponent {
           : 
           <div>
             <h2>You aren't currently following anyone</h2>
-            <Link to='/projects'><p>Go find some friends!</p></Link>
+            <Link to='/projects'><p>Find some friends to follow!</p></Link>
           </div>
         }
       </div>

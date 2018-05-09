@@ -34,7 +34,7 @@ class Header extends Component {
                       ? <div>
                         <li><button className="logout-button" onClick={this.handleLogOut}>Log out</button></li>
                         <li><Link to={`/user/${state.auth._id}/projects`}>My Profile</Link></li>
-                        <li><Link to={'/following'}>Friends</Link></li>
+                        <li><Link to={`${state.auth._id}/following`}>Friends</Link></li>
                       </div>
                       :
                       <Fragment>

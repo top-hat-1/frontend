@@ -146,7 +146,7 @@ function addFollow(followId, userId) {
 }
 
 function getfollowing(id) {
-  return fetch(`${URL}/users/${id}/folowing`, {
+  return fetch(`${URL}/users/${id}/following`, {
     method: 'GET',
     headers
   }).then(r => r.json());

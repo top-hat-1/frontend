@@ -8,10 +8,7 @@ export function following(state = [], { type, payload }) {
         payload
       ];
     case FOLLOW_LOAD:
-      return [
-        ...state,
-        payload
-      ];
+      return payload;
     default:
       return state;
   }
